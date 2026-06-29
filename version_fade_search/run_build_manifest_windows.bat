@@ -1,15 +1,24 @@
 @echo off
+setlocal
 chcp 65001 >nul
-set PYTHONUTF8=1
 cd /d "%~dp0"
+set PYTHONUTF8=1
+
 echo Building people_assets_manifest.js from assets\people ...
-python tools\build_people_assets_manifest.py --assets assets\people --output people_assets_manifest.js --base-url assets/people
-if errorlevel 1 (
+if not exist "assets\people" (
   echo.
-  echo Failed. Make sure Python is installed and assets\people exists next to this file.
+  echo ERROR: לא נמצאה תיקיית assets\people ליד הקבצים.
+  echo יש להעתיק את תיקיית people אל assets\people ואז להריץ שוב.
   pause
   exit /b 1
 )
+
+py -3 tools\build_people_assets_manifest.py --assets "assets\people" --output "people_assets_manifest.js" --base-url "assets/people"
+if errorlevel 1 (
+  python tools\build_people_assets_manifest.py --assets "assets\people" --output "people_assets_manifest.js" --base-url "assets/people"
+)
+
 echo.
-echo Done. Upload people_assets_manifest.js with index.html, app.js, styles.css, data.js and assets\people.
+echo Done. Upload these files/folders together:
+echo index.html, styles.css, app.js, people_assets_manifest.js, assets\people
 pause

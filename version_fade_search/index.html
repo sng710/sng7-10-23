@@ -3,21 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Memorial faded leaf version</title>
-<link rel="stylesheet" href="styles.css?v=fade-leaf-assets-v2">
+<title>לזכרם - faded leaf</title>
+<link rel="stylesheet" href="styles.css?v=fade-leaf-assets-v3">
 </head>
 <body>
-<main class="memorial-page" aria-label="memorial strip">
-<div class="leaf-bg" aria-hidden="true"></div><div class="leaf-darken" aria-hidden="true"></div>
-<header class="poem-panel"><h1><span id="poem1"></span><span id="poem2"></span><span id="poem3"></span></h1></header>
-<section class="stage-shell" aria-label="memory rotating cards"><div class="memory-stage" id="memoryStage" aria-live="polite"></div></section>
-<p class="count-line" id="countLine"></p>
-<nav class="floating-controls" aria-label="controls"><button id="nextBtn" type="button" class="nav-btn">Next</button><label class="search-wrap"><span class="sr-only">Search</span><input id="searchInput" type="search" autocomplete="off" placeholder="Search"></label><button id="prevBtn" type="button" class="nav-btn">Back</button><button id="pauseBtn" type="button" class="nav-btn ghost" aria-pressed="false">Pause</button></nav>
+<main class="memorial-page" aria-label="רצועת זיכרון">
+  <div class="leaf-bg" aria-hidden="true"></div>
+  <div class="leaf-darken" aria-hidden="true"></div>
+
+  <header class="poem-panel">
+    <h1>
+      <span id="poem1"></span>
+      <span id="poem2"></span>
+      <span id="poem3"></span>
+    </h1>
+  </header>
+
+  <section class="stage-shell" aria-label="כרטיסי זיכרון מתחלפים">
+    <div class="memory-stage" id="memoryStage" aria-live="polite"></div>
+  </section>
+
+  <p class="count-line" id="countLine"></p>
+
+  <nav class="floating-controls" aria-label="בקרת רצועת זיכרון">
+    <button id="nextBtn" type="button" class="nav-btn">הבא</button>
+    <label class="search-wrap">
+      <span class="sr-only">חיפוש</span>
+      <input id="searchInput" type="search" autocomplete="off" placeholder="חיפוש שם...">
+    </label>
+    <button id="prevBtn" type="button" class="nav-btn">קודם</button>
+    <button id="pauseBtn" type="button" class="nav-btn ghost" aria-pressed="false">עצירה</button>
+  </nav>
 </main>
-<div class="person-modal" id="personModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalName"><div class="modal-backdrop" data-close-modal></div><section class="modal-card" tabindex="-1"><button type="button" class="modal-close" data-close-modal aria-label="close">×</button><aside class="modal-side"><figure class="modal-image" id="modalImage"></figure></aside><div class="modal-text"><p class="modal-kicker" id="modalKicker"></p><h2 id="modalName"></h2><p class="modal-meta" id="modalMeta"></p><div class="modal-profile" id="modalProfile"></div></div></section></div>
-<script src="data.js?v=fade-leaf-assets-v2"></script>
-<script src="data.example.js?v=fade-leaf-assets-v2"></script>
-<script src="people_assets_manifest.js?v=fade-leaf-assets-v2"></script>
-<script src="app.js?v=fade-leaf-assets-v2"></script>
+
+<div class="person-modal" id="personModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalName">
+  <div class="modal-backdrop" data-close-modal></div>
+  <section class="modal-card" tabindex="-1">
+    <button type="button" class="modal-close" data-close-modal aria-label="סגירה">×</button>
+    <figure class="modal-image" id="modalImage"></figure>
+    <div class="modal-text">
+      <p class="modal-kicker" id="modalKicker"></p>
+      <h2 id="modalName"></h2>
+      <p class="modal-meta" id="modalMeta"></p>
+      <div class="modal-story" id="modalStory"></div>
+      <div class="modal-thumbs" id="modalThumbs" aria-label="תמונות נוספות"></div>
+    </div>
+  </section>
+</div>
+
+<!-- אין כאן data.js כדי שלא תהיה שגיאת 404. כל האנשים נטענים מהקובץ שנוצר: people_assets_manifest.js -->
+<script src="people_assets_manifest.js?v=fade-leaf-assets-v3"></script>
+<script src="app.js?v=fade-leaf-assets-v3"></script>
 </body>
 </html>

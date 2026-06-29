@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 Build people_assets_manifest.js from assets/people.
-The site itself cannot safely list folders in a browser, so this script scans once
-and creates a small JS manifest that the popup can use.
+The browser cannot list local folders by itself, so this script scans once and
+creates the manifest used by the faded leaf memorial page.
 
 It uses ONLY:
-- profile_text.txt, or another single text file if profile_text.txt is missing
+- profile_text.txt (preferred), or all_text_profile_and_inner_pages.txt if needed
 - photos/ folder image files
-It does not import inner_pages, profile.json or gallery_manifest.json into the popup.
+It does not read inner_pages, profile.json or gallery_manifest.json into the popup.
 """
 from __future__ import annotations
 
@@ -24,6 +24,8 @@ TEXT_PRIORITY = [
     "person_summary.txt",
     "all_text_profile_and_inner_pages.txt",
 ]
+
+SKIP_DIRS = {"images", "old", "backup", "backups", "tmp", "temp", "__macosx"}
 
 BOILERPLATE_PATTERNS = [
     r"^עבור לתפריט",
@@ -45,6 +47,8 @@ BOILERPLATE_PATTERNS = [
     r"^הדפסת תווית",
     r"^אנו עושים כל מאמץ",
     r"^אם ברצונכם להעיר",
+    r"^פרטים אישיים והנצחה:?$",
+    r"^קורות חיים$",
 ]
 BOILERPLATE_RES = [re.compile(p) for p in BOILERPLATE_PATTERNS]
 
@@ -60,10 +64,10 @@ def read_text(path: Path) -> str:
 
 
 def clean_text(s: str) -> str:
-    lines = []
-    seen = set()
-    for line in s.replace("\r", "").split("\n"):
-        line = re.sub(r"\s+", " ", line).strip()
+    lines: list[str] = []
+    seen: set[str] = set()
+    for raw in s.replace("\r", "").split("\n"):
+        line = re.sub(r"\s+", " ", raw).strip()
         if not line:
             continue
         if any(rx.search(line) for rx in BOILERPLATE_RES):
@@ -86,10 +90,28 @@ def clean_name(name: str) -> str:
 
 
 def infer_name_from_text(text: str) -> str:
-    for line in clean_text(text).splitlines()[:20]:
+    for line in clean_text(text).splitlines()[:25]:
         if re.search(r"ז[\"״'׳`]{0,2}\s*ל", line) and len(line) <= 90:
             return clean_name(line)
     return ""
+
+
+def infer_community(text: str) -> str:
+    patterns = [
+        r"התגורר(?:ה)?\s+ב([^\n,.]+)",
+        r"מקום אירוע:\s*([^\n,.]+)",
+        r"מקום מגורים:\s*([^\n,.]+)",
+    ]
+    for pat in patterns:
+        m = re.search(pat, text)
+        if m:
+            return re.sub(r"\s+", " ", m.group(1)).strip()
+    return ""
+
+
+def infer_age(text: str) -> str:
+    m = re.search(r"(?:בן|בת)\s+(\d{1,3})\s+במות", text)
+    return f"{m.group(1)} במותו/ה" if m else ""
 
 
 def choose_text_file(person_dir: Path) -> Path | None:
@@ -97,18 +119,20 @@ def choose_text_file(person_dir: Path) -> Path | None:
     for name in TEXT_PRIORITY:
         if name.lower() in by_name:
             return by_name[name.lower()]
-    txts = sorted([p for p in person_dir.iterdir() if p.is_file() and p.suffix.lower() == ".txt"])
+    txts = sorted([p for p in person_dir.iterdir() if p.is_file() and p.suffix.lower() == ".txt"], key=lambda p: p.name.lower())
     return txts[0] if txts else None
 
 
-def url_join(*parts: str) -> str:
-    return "/".join(quote(str(p).strip("/\\"), safe="") for p in parts if str(p).strip("/\\"))
+def url_path(base_url: str, *parts: str) -> str:
+    base_segments = [seg for seg in str(base_url).replace("\\", "/").strip("/").split("/") if seg]
+    all_segments = base_segments + [str(p).strip("/\\") for p in parts if str(p).strip("/\\")]
+    return "/".join(quote(seg, safe="") for seg in all_segments)
 
 
 def build_manifest(assets_dir: Path, base_url: str) -> list[dict]:
-    items = []
+    items: list[dict] = []
     for person_dir in sorted([p for p in assets_dir.iterdir() if p.is_dir()], key=lambda p: p.name):
-        if person_dir.name.lower() in {"images", "old", "backup", "backups", "tmp", "temp"}:
+        if person_dir.name.lower() in SKIP_DIRS:
             continue
         text_file = choose_text_file(person_dir)
         profile_text = ""
@@ -117,17 +141,23 @@ def build_manifest(assets_dir: Path, base_url: str) -> list[dict]:
             profile_text = clean_text(read_text(text_file))
             text_name = text_file.name
         name = infer_name_from_text(profile_text) or clean_name(person_dir.name)
+        community = infer_community(profile_text)
+        age = infer_age(profile_text)
+
         photos_dir = person_dir / "photos"
-        photos = []
+        photos: list[str] = []
         if photos_dir.exists() and photos_dir.is_dir():
             for img in sorted(photos_dir.rglob("*"), key=lambda p: p.name.lower()):
                 if img.is_file() and img.suffix.lower() in IMAGE_EXTS:
-                    rel = img.relative_to(assets_dir)
-                    photos.append(url_join(base_url, *rel.parts))
+                    rel = img.relative_to(photos_dir)
+                    photos.append(url_path(base_url, person_dir.name, "photos", *rel.parts))
+
         items.append({
             "folder": person_dir.name,
             "name": name,
             "names": sorted(set([name, clean_name(person_dir.name)])),
+            "community": community,
+            "age": age,
             "textFile": text_name,
             "profileText": profile_text,
             "photos": photos,
