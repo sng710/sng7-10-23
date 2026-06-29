@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>רקמה אנושית אחת — כל האנשים מוצגים</title>
+<title>רקמה אנושית אחת — תמונות מתחלפות</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
 :root {
@@ -46,19 +46,19 @@ img { max-width:100%; display:block; }
   position:relative; isolation:isolate; overflow:hidden;
   background:
     radial-gradient(circle at 18% 45%, rgba(255,255,255,.14), transparent 24%),
-    linear-gradient(90deg, rgba(27,53,102,.40) 0%, rgba(46,66,122,.66) 36%, rgba(46,66,122,.90) 100%),
+    linear-gradient(90deg, rgba(27,53,102,.50) 0%, rgba(46,66,122,.74) 36%, rgba(46,66,122,.94) 100%),
     var(--leaf-landscape) left center / cover no-repeat,
     var(--paper-blue);
 }
 .pdf-bg::before {
   content:""; position:absolute; inset:0; z-index:0;
   background: var(--leaf-landscape) left center / cover no-repeat;
-  opacity:.32; mix-blend-mode:screen; filter:contrast(1.03) brightness(1.04);
+  opacity:.28; mix-blend-mode:screen; filter:contrast(1.02) brightness(1.00);
   pointer-events:none;
 }
 .pdf-bg::after {
   content:""; position:absolute; inset:0; z-index:0;
-  background:linear-gradient(90deg,rgba(11,34,72,.28) 0%, rgba(46,66,122,.14) 42%, rgba(46,66,122,.31) 100%);
+  background:linear-gradient(90deg,rgba(11,34,72,.36) 0%, rgba(46,66,122,.22) 42%, rgba(46,66,122,.39) 100%);
   pointer-events:none;
 }
 .pdf-bg>* { position:relative; z-index:1; }
@@ -134,76 +134,56 @@ img { max-width:100%; display:block; }
   .main-title { font-size:clamp(40px,10.8vw,58px); }
 }
 
-.all-page{
-  min-height:100vh; padding:clamp(32px,4vw,56px) clamp(18px,3.2vw,42px) clamp(58px,6vw,90px);
-  background:
-    linear-gradient(90deg, rgba(28,54,105,.26), rgba(46,66,122,.72) 42%, rgba(46,66,122,.92)),
-    var(--leaf-landscape) left top / cover no-repeat,
-    var(--paper-blue);
-  background-attachment:fixed;
+.fade-poster{height:calc(100svh - 70px);min-height:760px;}
+.fade-hero{position:absolute;top:26.5%;left:4.7%;width:33.8%;text-align:center;}
+.fade-dedication{position:absolute;left:5.4%;top:74%;width:34.2%;}
+.fade-grid{
+  position:absolute;top:15.5%;right:3.6%;width:55%;
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:clamp(24px,2.25vw,42px) 4.2%;align-items:start;justify-items:center;direction:rtl;
 }
-.all-page::before{
-  content:""; position:fixed; inset:0; z-index:0; background:var(--leaf-landscape) left center/cover no-repeat;
-  opacity:.42; filter:contrast(1.05) brightness(1.06); mix-blend-mode:screen; pointer-events:none;
-}
-.all-page::after{
-  content:""; position:fixed; inset:0; z-index:0;
-  background:linear-gradient(90deg, rgba(15,38,76,.12), rgba(46,66,122,.32) 46%, rgba(46,66,122,.56));
-  pointer-events:none;
-}
-.all-page > *{position:relative;z-index:1;}
-.all-hero{width:min(100%,920px);margin:0 auto 30px;text-align:center;}
-.all-intro{width:min(100%,960px);margin:18px auto 30px;text-align:center;font-size:clamp(16px,1.12vw,20px);line-height:1.55;color:rgba(255,255,255,.92);}
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:24px 18px;align-items:start;}
-.person-card{
-  min-height:250px; border:1px solid rgba(255,255,255,.13); border-radius:28px; padding:18px 13px 16px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.032)),
-    rgba(22,42,82,.30);
-  box-shadow:0 18px 48px rgba(0,0,0,.20), inset 0 0 0 1px rgba(255,255,255,.045);
-  display:grid; justify-items:center; align-content:start; color:#fff; transition:transform .22s ease, background .22s ease, box-shadow .22s ease;
-}
-.person-card:hover,.person-card:focus-visible{
-  transform:translateY(-4px); background:linear-gradient(180deg, rgba(255,255,255,.105), rgba(255,255,255,.045)), rgba(30,55,104,.36);
-  box-shadow:0 24px 58px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.075); outline:none;
-}
-.person-card .photo-holder{width:clamp(118px,7.4vw,154px);}
-.person-card .slot-name{font-size:clamp(14px,.98vw,18px);max-width:100%;margin-top:17px;}
-.person-place{display:inline-block;margin-top:9px;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.10);color:rgba(255,255,255,.90);font-size:13px;font-weight:400;}
-.empty-search{display:none;text-align:center;padding:22px;border-radius:18px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.88);width:min(100%,560px);margin:20px auto 0;}
+.fade-grid .photo-holder{width:clamp(88px,5.75vw,122px);}
+.fade-grid .slot-name{font-size:clamp(11px,.78vw,15px);}
+.empty-search{position:absolute;right:7%;top:48%;width:min(500px,55%);padding:18px;border-radius:18px;background:rgba(255,255,255,.08);text-align:center;display:none;}
 .empty-search.show{display:block;}
+@media(max-width:1100px){.fade-grid{grid-template-columns:repeat(4,minmax(0,1fr));width:54%;}.fade-grid .photo-holder{width:clamp(82px,7vw,118px);}}
 @media(max-width:860px),(orientation:portrait){
-  .all-page{
-    background:
-      linear-gradient(90deg, rgba(30,56,105,.24), rgba(46,66,122,.78)),
-      var(--leaf-portrait) center top/cover no-repeat,
-      var(--paper-blue);
-  }
-  .all-page::before{background-image:var(--leaf-portrait);background-position:center top;opacity:.42;}
-  .all-hero{width:min(92%,820px);}
-  .cards-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px;}
-  .person-card{min-height:220px;border-radius:24px;padding:15px 10px;}
-  .person-card .photo-holder{width:clamp(104px,28vw,158px);}
-  .person-card .slot-name{font-size:clamp(13px,3.75vw,19px);}
+  .fade-poster{height:auto;min-height:max(100svh,1040px);}
+  .fade-hero{position:relative;top:auto;left:auto;width:min(86%,820px);margin:clamp(32px,5vh,70px) auto 28px;}
+  .fade-grid{position:relative;top:auto;right:auto;width:82%;margin:0 auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 14%;}
+  .fade-grid .photo-holder{width:clamp(118px,30vw,190px);}
+  .fade-grid .slot-name{font-size:clamp(14px,3.7vw,22px);}
+  .fade-dedication{position:relative;left:auto;top:auto;width:84%;margin:36px auto 0;font-size:clamp(15px,3.6vw,22px);}
 }
-@media(max-width:420px){
-  .cards-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 9px;}
-  .person-card{min-height:200px;padding-inline:8px;}
-  .person-card .photo-holder{width:clamp(94px,27vw,128px);}
-  .person-place{font-size:12px;padding:4px 9px;}
-}
+
+
+/* ===== תוספות v6: שומר על העיצוב המקורי, רק 6 אנשים בסבב + תוכן פופאפ ===== */
+.fade-grid{grid-template-columns:repeat(3,minmax(0,1fr));width:48%;right:6.2%;top:18.5%;gap:clamp(30px,3.2vw,54px) 7%;}
+.fade-grid .photo-holder{width:clamp(104px,7.1vw,150px);}
+.fade-grid .slot-name{font-size:clamp(12px,.9vw,17px);}
+.lightbox-card{width:min(94vw,900px);max-height:90svh;overflow:auto;text-align:right;}
+.lightbox-img{width:min(62vw,260px);margin:10px auto 18px;}
+.lightbox-title{text-align:center;margin:8px 0 6px;font-size:clamp(26px,3vw,40px);line-height:1.1;}
+.lightbox-place,.lightbox-role{text-align:center;color:rgba(255,255,255,.78);font-size:clamp(15px,1.4vw,19px);line-height:1.45;}
+.lightbox-role{margin-top:3px;}
+.lightbox-text{margin:20px auto 0;max-width:760px;text-align:right;white-space:pre-line;font-size:clamp(16px,1.22vw,20px);line-height:1.75;color:rgba(255,255,255,.92);font-weight:300;}
+.lightbox-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(82px,1fr));gap:10px;margin:22px auto 0;max-width:760px;}
+.lightbox-gallery img{width:100%;aspect-ratio:1/1;border-radius:18px;object-fit:cover;background:rgba(255,255,255,.08);box-shadow:0 0 0 1px rgba(255,255,255,.20),0 10px 24px rgba(0,0,0,.20);filter:grayscale(1) contrast(1.04);}
+@media(max-width:1100px){.fade-grid{grid-template-columns:repeat(3,minmax(0,1fr));width:52%;right:4%;}.fade-grid .photo-holder{width:clamp(92px,8vw,132px);}}
+@media(max-width:860px),(orientation:portrait){.fade-grid{grid-template-columns:repeat(2,minmax(0,1fr));width:82%;right:auto;top:auto;gap:26px 14%;}.fade-grid .photo-holder{width:clamp(118px,30vw,190px);} .lightbox-card{border-radius:24px;padding:22px 18px;}.lightbox-text{font-size:16px;line-height:1.65;}}
+
 </style>
 </head>
 <body>
 <div class="rekama-wrap">
   <div class="toolbar">
     <input id="searchInput" type="search" placeholder="חיפוש לפי שם או יישוב..." aria-label="חיפוש לפי שם או יישוב">
-    <button id="prevBtn" class="tool-btn" type="button">למעלה</button>
-    <button id="nextBtn" class="tool-btn" type="button">למטה</button>
-    <span id="countStatus" class="tool-meta"></span>
+    <button id="prevBtn" class="tool-btn" type="button">הקודם</button>
+    <button id="nextBtn" class="tool-btn" type="button">הבא</button>
+    <span id="statusText" class="tool-meta"></span>
   </div>
-  <section class="all-page" aria-label="רקמה אנושית אחת — כל האנשים">
-    <header class="all-hero">
+  <section class="pdf-bg fade-poster" aria-label="רקמה אנושית אחת">
+    <header class="fade-hero">
       <span class="rule" aria-hidden="true"></span>
       <div class="title-lockup">
         <p class="poem">וְאִם אֶחָד מֵאִתָּנוּ<br>הוֹלֵךְ מֵעִמָּנוּ<br>מַשֶּׁהוּ מֵת בָּנוּ<br>וּמַשֶּׁהוּ נִשְׁאָר אִתּוֹ.</p>
@@ -211,8 +191,8 @@ img { max-width:100%; display:block; }
       </div>
       <span class="rule" aria-hidden="true"></span>
     </header>
-    <p class="all-intro">כל הנופלות והנופלים מוצגים יחד, בכרטיסים מעוגלים ועדינים על רקע העלה הכחול. ניתן לחפש לפי שם או יישוב, וללחוץ על כל תמונה לפתיחה מוגדלת.</p>
-    <div class="cards-grid" id="cardsGrid" aria-label="כל הנופלות והנופלים"></div>
+    <div class="fade-grid" id="posterGrid" aria-label="תמונות מתחלפות של הנופלות והנופלים"></div>
+    <p class="dedication fade-dedication">נזכור בכבוד ובאהבה את כל הנופלות והנופלים,<br>שנפלו בשבעה באוקטובר ובימים שלאחריו,<br>ונישא את זכרם בליבנו כחלק בלתי נפרד מהסיפור שלנו<br>ומהתקווה לעתיד של שלום וביטחון לכולנו.</p>
     <div id="emptySearch" class="empty-search">לא נמצאו תוצאות לחיפוש הזה.</div>
   </section>
 </div>
@@ -224,41 +204,204 @@ img { max-width:100%; display:block; }
     <div class="lightbox-img" id="lightboxImg"></div>
     <h2 class="lightbox-title" id="lightboxTitle"></h2>
     <div class="lightbox-place" id="lightboxPlace"></div>
+    <div class="lightbox-role" id="lightboxRole"></div>
+    <div class="lightbox-text" id="lightboxText"></div>
+    <div class="lightbox-gallery" id="lightboxGallery" aria-label="תמונות נוספות"></div>
   </article>
 </div>
 
-<script>
 
-const people = [{"id": "person-043", "name": "ליבשטיין אופיר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-043.jpg", "age": 50, "role": "ראש המועצה האזורית שער הנגב וחבר כיתת הכוננות; חבר כיתת הכוננות כפר עזה"}, {"id": "person-054", "name": "צדיקביץ' עומר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-054.jpg", "age": 50, "role": "מנהל מערכות המידע של המועצה, איש ים וגלישה"}, {"id": "person-055", "name": "קוץ אביב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-055.jpg", "age": 53, "role": "מנהל פרויקטים, יוצר, איש משפחה ויוזם עפיפוניאדה"}, {"id": "person-058", "name": "קוץ ליבנת ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-058.jpg", "age": 49, "role": "אשת חינוך, יוצרת ומייסדת 'ביתמלאכה'"}, {"id": "person-059", "name": "קוץ רותם ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-059.jpg", "age": 18.5, "role": "מפקדת טירונים, רקדנית, אופה ויוצרת"}, {"id": "person-056", "name": "קוץ יונתן ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-056.jpg", "age": 16, "role": "כדורסלן מצטיין באקדמיית הפועל תל אביב"}, {"id": "person-057", "name": "קוץ יפתח ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-057.jpg", "age": 14, "role": "כדורסלן צעיר באקדמיית הפועל תל אביב"}, {"id": "person-072", "name": "זוהר יניב ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-072.jpg", "age": 53, "role": "חבר קהילת נחל עוז"}, {"id": "person-073", "name": "זוהר יסמין ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-073.jpg", "age": 48, "role": "חברת קהילת נחל עוז"}, {"id": "person-074", "name": "זוהר קשת ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-074.jpg", "age": 20, "role": "חברת קהילת נחל עוז"}, {"id": "person-075", "name": "זוהר תכלת ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-075.jpg", "age": 18, "role": "חברת קהילת נחל עוז"}, {"id": "person-044", "name": "ליבשטיין ניצן ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-044.jpg", "age": 19, "role": "בוגר מכינה קדם-צבאית, צעיר בעל תעצומות נפש"}, {"id": "person-027", "name": "גולדשטיין נדב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-027.jpg", "age": 48, "role": "אב ואיש משפחה מכפר עזה"}, {"id": "person-028", "name": "גולדשטיין ים ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-028.jpg", "age": 20, "role": "סמלת טירונים ורס\"פית בחיל הקשר והתקשוב"}, {"id": "person-011", "name": "אדמוני מיכל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-011.jpg", "age": 57, "role": "סופרת, מרצה, מאמנת ואשת השראה"}, {"id": "person-010", "name": "אדמוני גיא ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-010.jpg", "age": 25, "role": "סרן בחיל המודיעין, מפקד ואיש ערכים"}, {"id": "person-015", "name": "איתמרי רם ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-015.jpg", "age": 56, "role": "איש עבודה, נתינה ומשפחה"}, {"id": "person-016", "name": "איתמרי לילי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-016.jpg", "age": 63, "role": "אשת חינוך, תרבות, טיולים ושמחת חיים"}, {"id": "person-021", "name": "ברדיצ'סקי איתי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-021.jpg", "age": 30, "role": "קצין גולני לשעבר, סטודנט להנדסת חשמל ואב לתאומים"}, {"id": "person-022", "name": "בדיצ'סקי הדר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-022.jpg", "age": 30, "role": "כלכלנית ורואת חשבון, אם לתאומים"}, {"id": "person-019", "name": "אפשטין בלהה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-019.jpg", "age": 81, "role": "חברת קהילת כפר עזה"}, {"id": "person-020", "name": "אפשטין נטע ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-020.jpg", "age": 21, "role": "צעיר משכונת דור צעיר, בן זוגה של אירן שביט"}, {"id": "person-030", "name": "גורן טובה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-030.jpg", "age": 65, "role": "חברת קהילת כפר עזה"}, {"id": "person-029", "name": "גורן ארן ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-029.jpg", "age": 34, "role": "חברת קהילת כפר עזה"}, {"id": "person-034", "name": "ורטהיים דורית ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-034.jpg", "age": 54, "role": "חברת קהילת כפר עזה"}, {"id": "person-035", "name": "ורטהיים אביב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-035.jpg", "age": 57, "role": "חבר קהילת כפר עזה"}, {"id": "person-037", "name": "זיו איתן ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-037.jpg", "age": 74, "role": "מורה דרך ויוזם מיזם 'מוקירים'"}, {"id": "person-038", "name": "זיו פלג תמי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-038.jpg", "age": 72, "role": "אופה מוכשרת, מתנדבת ואשת בית וקהילה"}, {"id": "person-050", "name": "פלד גילה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-050.jpg", "age": 59, "role": "אחות קהילה, מנהלת מרפאה ואשת נתינה"}, {"id": "person-051", "name": "פלד יזהר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-051.jpg", "age": 62, "role": "תת-ניצב בדימוס, מפקד במג\"ב ואיש משפחה"}, {"id": "person-049", "name": "פלד דניאל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-049.jpg", "age": 28, "role": "פראמדיק, מאמן כושר ואיש חיוך וצחוק"}, {"id": "person-052", "name": "פלש יגאל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-052.jpg", "age": 66, "role": "חקלאי, אגרונום ומומחה לגידולי שדה"}, {"id": "person-053", "name": "פלש סינתיה תמר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-053.jpg", "age": 67, "role": "רכזת אקדמית, זמרת מקהלה ואשת משפחה"}, {"id": "person-066", "name": "שוורצמן אלברטו דוד ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-066.jpg", "age": 67, "role": "איש חקלאות, השקיה, אירוח ומשפחה"}, {"id": "person-065", "name": "שוורצמן פינקו אורלי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-065.jpg", "age": 67, "role": "אחות ומנהלת סיעוד, אם וסבתא מסורה"}, {"id": "person-078", "name": "עידן צחי ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-078.jpg", "age": 50, "role": "אב משפחה מנחל עוז שנחטף לרצועת עזה"}, {"id": "person-079", "name": "עידן מעיין ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-079.jpg", "age": 18, "role": "חברת קהילת נחל עוז"}, {"id": "person-046", "name": "עידן רועי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-046.jpg", "age": 43, "role": "צלם עיתונות, אמן ומורה לצילום"}, {"id": "person-045", "name": "עידן סמדר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-045.jpg", "age": 38, "role": "אשת מודיעין והפקה, אם לשלושה"}, {"id": "person-070", "name": "אליקים נעם ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-070.jpg", "age": 46, "role": "מסגר, איש משפחה ונתינה"}, {"id": "person-081", "name": "ערבה דקלה ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-081.jpg", "age": 51, "role": "אשת חינוך, מנהלת מערכת החינוך ויועצת חינוכית בגיל הרך"}, {"id": "person-080", "name": "ערבה אליעז תומר ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-080.jpg", "age": 17, "role": "בן קיבוץ נחל עוז"}, {"id": "person-061", "name": "רביב ניב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-061.jpg", "age": 27, "role": "קצינה לשעבר, סטודנטית לפסיכולוגיה וקרימינולוגיה"}, {"id": "person-036", "name": "זיני ניראל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-036.jpg", "age": 31, "role": "רב-סרן במילואים, קצין ומנהיג של נתינה"}, {"id": "person-017", "name": "אלקבץ סיון ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-017.jpg", "age": 23, "role": "סטודנטית למדעי המחשב, רקדנית ואמנית בנפשה"}, {"id": "person-041", "name": "חסידים נאור ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-041.jpg", "age": 23, "role": "בן זוגה של סיון אלקבץ, איש שמחת חיים ונתינה"}, {"id": "person-004", "name": "חג'בי זיו ז\"ל", "place": "גבים", "image": "assets/people-original/person-004.jpg", "age": 29, "role": "מוזיקאי, אוהב אדם ואוהב ריקוד"}, {"id": "person-006", "name": "חג'בי יהונתן ז\"ל", "place": "יכיני", "image": "assets/people-original/person-006.jpg", "age": 18, "role": "מדריך, אוהב בעלי חיים וחולם להיות וטרינר"}, {"id": "person-005", "name": "חג'בי אליצור צוריאל ז\"ל", "place": "יכיני", "image": "assets/people-original/person-005.jpg", "age": 60, "role": "תושב מושב יכיני"}, {"id": "person-007", "name": "חג'בי יזהר ז\"ל", "place": "יכיני", "image": "assets/people-original/person-007.jpg", "age": 66, "role": "איש אדמה, קומביינים ומשפחה"}, {"id": "person-067", "name": "שושני אופיר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-067.jpg", "age": 20, "role": "סמלת בחיל המודיעין, מפקדת טירונים וחברת קבוצת שיטה"}, {"id": "person-077", "name": "מולל ג'ושוע לואיטו ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-077.jpg", "age": 21, "role": "אזרח טנזניה שנחטף מנחל עוז"}, {"id": "person-023", "name": "בויום יובל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-023.jpg", "age": 21, "role": "תושב כפר עזה"}, {"id": "person-069", "name": "שמריז אלון ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-069.jpg", "age": 26, "role": "בן כפר עזה, שחקן כדורסל וסטודנט לעתיד להנדסת מחשבים"}, {"id": "person-086", "name": "שפירא זיו פפה ז\"ל", "place": "ניר עם", "image": "assets/people-original/person-086.jpg", "age": 26, "role": "רתך צנרת, צורף, מוזיקאי וחובב מסיבות"}, {"id": "person-002", "name": "נעים אמיר ז\"ל", "place": "ארז", "image": "assets/people-original/person-002.jpg", "age": 27, "role": "רס\"ן במילואים וחבר כיתת הכוננות של קיבוץ ארז; חבר כיתת הכוננות בקיבוץ ארז"}, {"id": "person-039", "name": "חיים יותם ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-039.jpg", "age": 28, "role": "תושב כפר עזה שנחטף לרצועת עזה"}, {"id": "person-048", "name": "סלומון יובל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-048.jpg", "age": 29, "role": "לוחם נח\"ל לשעבר, אוהד מכבי חיפה ואיש שמחת חיים"}, {"id": "person-012", "name": "אדרי אביעד ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-012.jpg", "age": 30, "role": "איש של אנשים, הומור ועשייה"}, {"id": "person-008", "name": "סלאם פלג ז\"ל", "place": "יכיני", "image": "assets/people-original/person-008.jpg", "age": 30, "role": "רס\"ן, מפקד, מוזיקאי ואיש משפחה"}, {"id": "person-026", "name": "ברעם אביב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-026.jpg", "age": 33, "role": "חבר כיתת הכוננות, מפיק טכני ואיש משפחה; חבר כיתת הכוננות כפר עזה"}, {"id": "person-025", "name": "ברגשטיין שחף ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-025.jpg", "age": 33, "role": "לוחם מילואים, חובש, איש אדמה וטיולים"}, {"id": "person-001", "name": "גלסקי יבגני ז\"ל", "place": "ארז", "image": "assets/people-original/person-001.jpg", "age": 34, "role": "לוחם אש, מאמן כושר ורוכב אופניים"}, {"id": "person-033", "name": "וינר יהב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-033.jpg", "age": 37, "role": "יוצר קולנוע, שחקן, אב ובעל"}, {"id": "person-032", "name": "הנדי אבי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-032.jpg", "age": 38, "role": "סרן, סגן רבש\"ץ וחבר כיתת הכוננות בכפר עזה; סגן רבש\"ץ כפר עזה"}, {"id": "person-083", "name": "פיורנטינו אילן ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-083.jpg", "age": 38, "role": "רבש\"ץ נחל עוז, אב ואיש קהילה; רבש\"צ נחל עוז"}, {"id": "person-084", "name": "פנסה ארד סומקואן ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-084.jpg", "age": 39, "role": "אזרח תאילנד, עובד חקלאות"}, {"id": "person-047", "name": "עמיקם נדב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-047.jpg", "age": 39, "role": "מחנך, אמן עץ וחבר כיתת הכוננות; חבר כיתת הכוננות כפר עזה"}, {"id": "person-063", "name": "רוסו אורי שמעון ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-063.jpg", "age": 44, "role": "רב-סרן, מהנדס, לוחם אש וחבר כיתת הכוננות; סגן מפקד כיתת הכוננות כפר עזה"}, {"id": "person-014", "name": "אילון טל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-014.jpg", "age": 46, "role": "מפקד כיתת הכוננות, איש ים וקהילה; מפקד כיתת הכוננות כפר עזה"}, {"id": "person-024", "name": "בן דוד מאיה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-024.jpg", "age": 48, "role": "מחנכת, יזמית ובעלת מורינגה ישראל"}, {"id": "person-040", "name": "חרמש עומר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-040.jpg", "age": 48, "role": "איש חינוך בלתי-פורמלי, אוהד הפועל תל אביב ואוהב כלבים"}, {"id": "person-082", "name": "פוסלושני רן ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-082.jpg", "age": 48, "role": "חבר כיתת הכוננות, איש משפחה וקהילה; חבר כיתת הכוננות נחל עוז"}, {"id": "person-003", "name": "דוידוביץ שלומי ז\"ל", "place": "גבים", "image": "assets/people-original/person-003.jpg", "age": 50, "role": "איש משפחה, רוכב אופניים וחבר אהוב בקהילתו"}, {"id": "person-068", "name": "שטהל מירה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-068.jpg", "age": 53, "role": "אשת חינוך, יועצת ופסיכותרפיסטית"}, {"id": "person-009", "name": "אביאני שחר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-009.jpg", "age": 56, "role": "רבש\"ץ כפר עזה, איש משפחה וקהילה"}, {"id": "person-018", "name": "אמיר מרדכי (מודי) ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-018.jpg", "age": 67, "role": "איש כפיים, מחשבים ומשפחה"}, {"id": "person-013", "name": "אורגד אליהו ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-013.jpg", "age": 72, "role": "איש תרבות, דעת וקהילת כפר עזה"}, {"id": "person-060", "name": "קציר דוד ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-060.jpg", "age": 72, "role": "חבר קהילת כפר עזה ואוהב טיולי ג'יפים"}, {"id": "person-064", "name": "רייכנשטיין אליהו ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-064.jpg", "age": 75, "role": "ספורטאי, רוכב אופניים, אמן ומטפח הבוסתן"}, {"id": "person-071", "name": "ברוש שושנה ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-071.jpg", "age": 75, "role": "קיבוצניקית, אשת תרבות ומשפחה"}, {"id": "person-031", "name": "דגני נעמי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-031.jpg", "age": 80, "role": "אחות, ממקימות המרפאה בכפר עזה ואשת נתינה"}, {"id": "person-085", "name": "רון שלמה צבי ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-085.jpg", "age": 84, "role": "ממייסדי נחל עוז, איש אדמה, ספר וקהילה"}, {"id": "person-062", "name": "רונן נירה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-062.jpg", "age": 85, "role": "חברת קהילת כפר עזה"}, {"id": "person-076", "name": "ליבנה חיים ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-076.jpg", "age": 87, "role": "חבר קהילת נחל עוז"}];
+<script src="people_assets_manifest.js?v=original-fade-assets-v6"></script>
+<script>
+'use strict';
+
+const FALLBACK_PEOPLE = [{"id": "person-043", "name": "ליבשטיין אופיר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-043.jpg", "age": 50, "role": "ראש המועצה האזורית שער הנגב וחבר כיתת הכוננות; חבר כיתת הכוננות כפר עזה"}, {"id": "person-054", "name": "צדיקביץ' עומר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-054.jpg", "age": 50, "role": "מנהל מערכות המידע של המועצה, איש ים וגלישה"}, {"id": "person-055", "name": "קוץ אביב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-055.jpg", "age": 53, "role": "מנהל פרויקטים, יוצר, איש משפחה ויוזם עפיפוניאדה"}, {"id": "person-058", "name": "קוץ ליבנת ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-058.jpg", "age": 49, "role": "אשת חינוך, יוצרת ומייסדת 'ביתמלאכה'"}, {"id": "person-059", "name": "קוץ רותם ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-059.jpg", "age": 18.5, "role": "מפקדת טירונים, רקדנית, אופה ויוצרת"}, {"id": "person-056", "name": "קוץ יונתן ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-056.jpg", "age": 16, "role": "כדורסלן מצטיין באקדמיית הפועל תל אביב"}, {"id": "person-057", "name": "קוץ יפתח ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-057.jpg", "age": 14, "role": "כדורסלן צעיר באקדמיית הפועל תל אביב"}, {"id": "person-072", "name": "זוהר יניב ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-072.jpg", "age": 53, "role": "חבר קהילת נחל עוז"}, {"id": "person-073", "name": "זוהר יסמין ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-073.jpg", "age": 48, "role": "חברת קהילת נחל עוז"}, {"id": "person-074", "name": "זוהר קשת ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-074.jpg", "age": 20, "role": "חברת קהילת נחל עוז"}, {"id": "person-075", "name": "זוהר תכלת ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-075.jpg", "age": 18, "role": "חברת קהילת נחל עוז"}, {"id": "person-044", "name": "ליבשטיין ניצן ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-044.jpg", "age": 19, "role": "בוגר מכינה קדם-צבאית, צעיר בעל תעצומות נפש"}, {"id": "person-027", "name": "גולדשטיין נדב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-027.jpg", "age": 48, "role": "אב ואיש משפחה מכפר עזה"}, {"id": "person-028", "name": "גולדשטיין ים ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-028.jpg", "age": 20, "role": "סמלת טירונים ורס\"פית בחיל הקשר והתקשוב"}, {"id": "person-011", "name": "אדמוני מיכל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-011.jpg", "age": 57, "role": "סופרת, מרצה, מאמנת ואשת השראה"}, {"id": "person-010", "name": "אדמוני גיא ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-010.jpg", "age": 25, "role": "סרן בחיל המודיעין, מפקד ואיש ערכים"}, {"id": "person-015", "name": "איתמרי רם ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-015.jpg", "age": 56, "role": "איש עבודה, נתינה ומשפחה"}, {"id": "person-016", "name": "איתמרי לילי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-016.jpg", "age": 63, "role": "אשת חינוך, תרבות, טיולים ושמחת חיים"}, {"id": "person-021", "name": "ברדיצ'סקי איתי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-021.jpg", "age": 30, "role": "קצין גולני לשעבר, סטודנט להנדסת חשמל ואב לתאומים"}, {"id": "person-022", "name": "בדיצ'סקי הדר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-022.jpg", "age": 30, "role": "כלכלנית ורואת חשבון, אם לתאומים"}, {"id": "person-019", "name": "אפשטין בלהה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-019.jpg", "age": 81, "role": "חברת קהילת כפר עזה"}, {"id": "person-020", "name": "אפשטין נטע ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-020.jpg", "age": 21, "role": "צעיר משכונת דור צעיר, בן זוגה של אירן שביט"}, {"id": "person-030", "name": "גורן טובה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-030.jpg", "age": 65, "role": "חברת קהילת כפר עזה"}, {"id": "person-029", "name": "גורן ארן ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-029.jpg", "age": 34, "role": "חברת קהילת כפר עזה"}, {"id": "person-034", "name": "ורטהיים דורית ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-034.jpg", "age": 54, "role": "חברת קהילת כפר עזה"}, {"id": "person-035", "name": "ורטהיים אביב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-035.jpg", "age": 57, "role": "חבר קהילת כפר עזה"}, {"id": "person-037", "name": "זיו איתן ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-037.jpg", "age": 74, "role": "מורה דרך ויוזם מיזם 'מוקירים'"}, {"id": "person-038", "name": "זיו פלג תמי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-038.jpg", "age": 72, "role": "אופה מוכשרת, מתנדבת ואשת בית וקהילה"}, {"id": "person-050", "name": "פלד גילה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-050.jpg", "age": 59, "role": "אחות קהילה, מנהלת מרפאה ואשת נתינה"}, {"id": "person-051", "name": "פלד יזהר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-051.jpg", "age": 62, "role": "תת-ניצב בדימוס, מפקד במג\"ב ואיש משפחה"}, {"id": "person-049", "name": "פלד דניאל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-049.jpg", "age": 28, "role": "פראמדיק, מאמן כושר ואיש חיוך וצחוק"}, {"id": "person-052", "name": "פלש יגאל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-052.jpg", "age": 66, "role": "חקלאי, אגרונום ומומחה לגידולי שדה"}, {"id": "person-053", "name": "פלש סינתיה תמר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-053.jpg", "age": 67, "role": "רכזת אקדמית, זמרת מקהלה ואשת משפחה"}, {"id": "person-066", "name": "שוורצמן אלברטו דוד ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-066.jpg", "age": 67, "role": "איש חקלאות, השקיה, אירוח ומשפחה"}, {"id": "person-065", "name": "שוורצמן פינקו אורלי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-065.jpg", "age": 67, "role": "אחות ומנהלת סיעוד, אם וסבתא מסורה"}, {"id": "person-078", "name": "עידן צחי ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-078.jpg", "age": 50, "role": "אב משפחה מנחל עוז שנחטף לרצועת עזה"}, {"id": "person-079", "name": "עידן מעיין ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-079.jpg", "age": 18, "role": "חברת קהילת נחל עוז"}, {"id": "person-046", "name": "עידן רועי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-046.jpg", "age": 43, "role": "צלם עיתונות, אמן ומורה לצילום"}, {"id": "person-045", "name": "עידן סמדר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-045.jpg", "age": 38, "role": "אשת מודיעין והפקה, אם לשלושה"}, {"id": "person-070", "name": "אליקים נעם ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-070.jpg", "age": 46, "role": "מסגר, איש משפחה ונתינה"}, {"id": "person-081", "name": "ערבה דקלה ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-081.jpg", "age": 51, "role": "אשת חינוך, מנהלת מערכת החינוך ויועצת חינוכית בגיל הרך"}, {"id": "person-080", "name": "ערבה אליעז תומר ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-080.jpg", "age": 17, "role": "בן קיבוץ נחל עוז"}, {"id": "person-061", "name": "רביב ניב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-061.jpg", "age": 27, "role": "קצינה לשעבר, סטודנטית לפסיכולוגיה וקרימינולוגיה"}, {"id": "person-036", "name": "זיני ניראל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-036.jpg", "age": 31, "role": "רב-סרן במילואים, קצין ומנהיג של נתינה"}, {"id": "person-017", "name": "אלקבץ סיון ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-017.jpg", "age": 23, "role": "סטודנטית למדעי המחשב, רקדנית ואמנית בנפשה"}, {"id": "person-041", "name": "חסידים נאור ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-041.jpg", "age": 23, "role": "בן זוגה של סיון אלקבץ, איש שמחת חיים ונתינה"}, {"id": "person-004", "name": "חג'בי זיו ז\"ל", "place": "גבים", "image": "assets/people-original/person-004.jpg", "age": 29, "role": "מוזיקאי, אוהב אדם ואוהב ריקוד"}, {"id": "person-006", "name": "חג'בי יהונתן ז\"ל", "place": "יכיני", "image": "assets/people-original/person-006.jpg", "age": 18, "role": "מדריך, אוהב בעלי חיים וחולם להיות וטרינר"}, {"id": "person-005", "name": "חג'בי אליצור צוריאל ז\"ל", "place": "יכיני", "image": "assets/people-original/person-005.jpg", "age": 60, "role": "תושב מושב יכיני"}, {"id": "person-007", "name": "חג'בי יזהר ז\"ל", "place": "יכיני", "image": "assets/people-original/person-007.jpg", "age": 66, "role": "איש אדמה, קומביינים ומשפחה"}, {"id": "person-067", "name": "שושני אופיר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-067.jpg", "age": 20, "role": "סמלת בחיל המודיעין, מפקדת טירונים וחברת קבוצת שיטה"}, {"id": "person-077", "name": "מולל ג'ושוע לואיטו ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-077.jpg", "age": 21, "role": "אזרח טנזניה שנחטף מנחל עוז"}, {"id": "person-023", "name": "בויום יובל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-023.jpg", "age": 21, "role": "תושב כפר עזה"}, {"id": "person-069", "name": "שמריז אלון ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-069.jpg", "age": 26, "role": "בן כפר עזה, שחקן כדורסל וסטודנט לעתיד להנדסת מחשבים"}, {"id": "person-086", "name": "שפירא זיו פפה ז\"ל", "place": "ניר עם", "image": "assets/people-original/person-086.jpg", "age": 26, "role": "רתך צנרת, צורף, מוזיקאי וחובב מסיבות"}, {"id": "person-002", "name": "נעים אמיר ז\"ל", "place": "ארז", "image": "assets/people-original/person-002.jpg", "age": 27, "role": "רס\"ן במילואים וחבר כיתת הכוננות של קיבוץ ארז; חבר כיתת הכוננות בקיבוץ ארז"}, {"id": "person-039", "name": "חיים יותם ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-039.jpg", "age": 28, "role": "תושב כפר עזה שנחטף לרצועת עזה"}, {"id": "person-048", "name": "סלומון יובל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-048.jpg", "age": 29, "role": "לוחם נח\"ל לשעבר, אוהד מכבי חיפה ואיש שמחת חיים"}, {"id": "person-012", "name": "אדרי אביעד ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-012.jpg", "age": 30, "role": "איש של אנשים, הומור ועשייה"}, {"id": "person-008", "name": "סלאם פלג ז\"ל", "place": "יכיני", "image": "assets/people-original/person-008.jpg", "age": 30, "role": "רס\"ן, מפקד, מוזיקאי ואיש משפחה"}, {"id": "person-026", "name": "ברעם אביב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-026.jpg", "age": 33, "role": "חבר כיתת הכוננות, מפיק טכני ואיש משפחה; חבר כיתת הכוננות כפר עזה"}, {"id": "person-025", "name": "ברגשטיין שחף ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-025.jpg", "age": 33, "role": "לוחם מילואים, חובש, איש אדמה וטיולים"}, {"id": "person-001", "name": "גלסקי יבגני ז\"ל", "place": "ארז", "image": "assets/people-original/person-001.jpg", "age": 34, "role": "לוחם אש, מאמן כושר ורוכב אופניים"}, {"id": "person-033", "name": "וינר יהב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-033.jpg", "age": 37, "role": "יוצר קולנוע, שחקן, אב ובעל"}, {"id": "person-032", "name": "הנדי אבי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-032.jpg", "age": 38, "role": "סרן, סגן רבש\"ץ וחבר כיתת הכוננות בכפר עזה; סגן רבש\"ץ כפר עזה"}, {"id": "person-083", "name": "פיורנטינו אילן ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-083.jpg", "age": 38, "role": "רבש\"ץ נחל עוז, אב ואיש קהילה; רבש\"צ נחל עוז"}, {"id": "person-084", "name": "פנסה ארד סומקואן ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-084.jpg", "age": 39, "role": "אזרח תאילנד, עובד חקלאות"}, {"id": "person-047", "name": "עמיקם נדב ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-047.jpg", "age": 39, "role": "מחנך, אמן עץ וחבר כיתת הכוננות; חבר כיתת הכוננות כפר עזה"}, {"id": "person-063", "name": "רוסו אורי שמעון ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-063.jpg", "age": 44, "role": "רב-סרן, מהנדס, לוחם אש וחבר כיתת הכוננות; סגן מפקד כיתת הכוננות כפר עזה"}, {"id": "person-014", "name": "אילון טל ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-014.jpg", "age": 46, "role": "מפקד כיתת הכוננות, איש ים וקהילה; מפקד כיתת הכוננות כפר עזה"}, {"id": "person-024", "name": "בן דוד מאיה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-024.jpg", "age": 48, "role": "מחנכת, יזמית ובעלת מורינגה ישראל"}, {"id": "person-040", "name": "חרמש עומר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-040.jpg", "age": 48, "role": "איש חינוך בלתי-פורמלי, אוהד הפועל תל אביב ואוהב כלבים"}, {"id": "person-082", "name": "פוסלושני רן ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-082.jpg", "age": 48, "role": "חבר כיתת הכוננות, איש משפחה וקהילה; חבר כיתת הכוננות נחל עוז"}, {"id": "person-003", "name": "דוידוביץ שלומי ז\"ל", "place": "גבים", "image": "assets/people-original/person-003.jpg", "age": 50, "role": "איש משפחה, רוכב אופניים וחבר אהוב בקהילתו"}, {"id": "person-068", "name": "שטהל מירה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-068.jpg", "age": 53, "role": "אשת חינוך, יועצת ופסיכותרפיסטית"}, {"id": "person-009", "name": "אביאני שחר ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-009.jpg", "age": 56, "role": "רבש\"ץ כפר עזה, איש משפחה וקהילה"}, {"id": "person-018", "name": "אמיר מרדכי (מודי) ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-018.jpg", "age": 67, "role": "איש כפיים, מחשבים ומשפחה"}, {"id": "person-013", "name": "אורגד אליהו ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-013.jpg", "age": 72, "role": "איש תרבות, דעת וקהילת כפר עזה"}, {"id": "person-060", "name": "קציר דוד ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-060.jpg", "age": 72, "role": "חבר קהילת כפר עזה ואוהב טיולי ג'יפים"}, {"id": "person-064", "name": "רייכנשטיין אליהו ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-064.jpg", "age": 75, "role": "ספורטאי, רוכב אופניים, אמן ומטפח הבוסתן"}, {"id": "person-071", "name": "ברוש שושנה ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-071.jpg", "age": 75, "role": "קיבוצניקית, אשת תרבות ומשפחה"}, {"id": "person-031", "name": "דגני נעמי ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-031.jpg", "age": 80, "role": "אחות, ממקימות המרפאה בכפר עזה ואשת נתינה"}, {"id": "person-085", "name": "רון שלמה צבי ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-085.jpg", "age": 84, "role": "ממייסדי נחל עוז, איש אדמה, ספר וקהילה"}, {"id": "person-062", "name": "רונן נירה ז\"ל", "place": "כפר עזה", "image": "assets/people-original/person-062.jpg", "age": 85, "role": "חברת קהילת כפר עזה"}, {"id": "person-076", "name": "ליבנה חיים ז\"ל", "place": "נחל עוז", "image": "assets/people-original/person-076.jpg", "age": 87, "role": "חבר קהילת נחל עוז"}];
+const SLOTS_PER_ROUND = 6;
+const PEOPLE_ROOTS = ['assets/people-original', 'assets/people'];
+const GITHUB_BRANCH = 'main';
+
 const searchInput = document.getElementById('searchInput');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxTitle = document.getElementById('lightboxTitle');
 const lightboxPlace = document.getElementById('lightboxPlace');
+const lightboxRole = document.getElementById('lightboxRole');
+const lightboxText = document.getElementById('lightboxText');
+const lightboxGallery = document.getElementById('lightboxGallery');
 const lightboxClose = document.getElementById('lightboxClose');
+const posterGrid = document.getElementById('posterGrid');
+const statusText = document.getElementById('statusText');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const emptySearch = document.getElementById('emptySearch');
 
+let people = [];
+let cards = [];
+let active = [];
+let startIndex = 0;
+let timer = null;
+let slotsCount = SLOTS_PER_ROUND;
+
+function escapeHtml(value) {
+  return String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
+}
+function encodePath(path) {
+  return String(path || '').split('/').map(part => encodeURIComponent(part)).join('/');
+}
+function normalizeSlashes(path) { return String(path || '').replace(/\\/g, '/').replace(/\/+/g, '/'); }
+function cleanPersonName(value) {
+  let s = String(value || '').trim();
+  s = s.replace(/\.[a-z0-9]+$/i, '');
+  s = s.replace(/^\d+[_\-\s]*/, '');
+  s = s.replace(/[_\-]+/g, ' ').replace(/\s+/g, ' ').trim();
+  s = s.replace(/ז["״'׳`]{0,2}ל/g, 'ז״ל').replace(/ז״ל/g, 'ז"ל');
+  if (s && !/ז["״']?ל/.test(s)) s += ' ז"ל';
+  return s;
+}
+function titleFromPath(path) {
+  const parts = normalizeSlashes(path).split('/').filter(Boolean);
+  return cleanPersonName(parts[parts.length - 1] || '');
+}
+function cleanProfileText(raw) {
+  const badExact = new Set([
+    'עבור לתפריט נושאים','עבור למפת האתר','אזרחים חללי פעולות איבה - חיפוש','חללי "חרבות ברזל"','האנדרטה לזכרם בהר הרצל',
+    'דבר שר העבודה','דבר מנכ"ל הביטוח הלאומי','מידע שימושי למשפחות השכולות','אוגדן זכויות למשפחות חללי פעולות האיבה',
+    'שיתוף בפייסבוק','הדפסת תווית לנר זיכרון','על אודות האתר','דף חלל','אלבום זיכרון','תמונות המצבה','בניית אתרים:','פיתוח מאגרי מידע'
+  ]);
+  let lines = String(raw || '').replace(/\r/g, '\n').split('\n').map(l => l.trim()).filter(Boolean);
+  lines = lines.filter(line => {
+    if (badExact.has(line)) return false;
+    if (/^(עבור|מידע שימושי|אוגדן זכויות|בניית אתרים|פיתוח מאגרי מידע)/.test(line)) return false;
+    if (/^אנו עושים כל מאמץ לדייק/.test(line)) return false;
+    if (/^אם ברצונכם להעיר או לתקן/.test(line)) return false;
+    return true;
+  });
+  return lines.join('\n');
+}
+function extractPlace(text) {
+  const s = String(text || '');
+  const patterns = [/התגורר(?:ה)?\s+ב([^\n,]+)/, /מקום אירוע:\s*([^\n,]+)/, /מקום מגורים:\s*([^\n,]+)/];
+  for (const re of patterns) {
+    const m = s.match(re);
+    if (m && m[1]) return m[1].trim();
+  }
+  return '';
+}
+function normalizeManifestItem(item, index) {
+  const folder = normalizeSlashes(item.folder || item.dir || item.path || '');
+  const rawText = item.profileText || item.text || '';
+  const cleanText = cleanProfileText(rawText);
+  const name = cleanPersonName(item.name || titleFromPath(folder) || `אדם ${index + 1}`);
+  const photos = (item.photos || item.images || []).map(p => normalizeSlashes(p)).filter(Boolean);
+  const image = item.image || photos[0] || '';
+  return {
+    id: item.id || folder || `manifest-${index}`,
+    name,
+    place: item.place || extractPlace(cleanText),
+    role: item.role || '',
+    image,
+    photos,
+    profileText: cleanText,
+    profileTextPath: item.profileTextPath || item.textPath || ''
+  };
+}
+function manifestPeople() {
+  const manifest = Array.isArray(window.PEOPLE_ASSETS_MANIFEST) ? window.PEOPLE_ASSETS_MANIFEST : [];
+  return manifest.map(normalizeManifestItem).filter(p => p.name && (p.image || p.profileText || p.photos.length));
+}
+function getGithubRepoInfo() {
+  const host = location.hostname;
+  if (!host.endsWith('.github.io')) return null;
+  const owner = host.replace('.github.io', '');
+  const parts = location.pathname.split('/').filter(Boolean);
+  if (!parts.length) return null;
+  const repo = parts[0];
+  let base = parts.slice(1);
+  if (base.length && /\.[a-z0-9]+$/i.test(base[base.length - 1])) base = base.slice(0, -1);
+  return { owner, repo, basePath: base.join('/') };
+}
+async function loadGithubAssetsFallback() {
+  const info = getGithubRepoInfo();
+  if (!info) return [];
+  try {
+    const api = `https://api.github.com/repos/${info.owner}/${info.repo}/git/trees/${GITHUB_BRANCH}?recursive=1`;
+    const res = await fetch(api, { cache: 'no-store' });
+    if (!res.ok) throw new Error('GitHub API ' + res.status);
+    const data = await res.json();
+    const tree = Array.isArray(data.tree) ? data.tree : [];
+    for (const root of PEOPLE_ROOTS) {
+      const prefix = [info.basePath, root].filter(Boolean).join('/').replace(/^\/+|\/+$/g, '');
+      const grouped = new Map();
+      for (const node of tree) {
+        if (node.type !== 'blob') continue;
+        const path = node.path || '';
+        if (!path.startsWith(prefix + '/')) continue;
+        const rest = path.slice(prefix.length + 1);
+        const bits = rest.split('/');
+        if (bits.length < 2) continue;
+        const personFolder = bits[0];
+        const rel = bits.slice(1).join('/');
+        if (!grouped.has(personFolder)) grouped.set(personFolder, { folder: `${root}/${personFolder}`, name: cleanPersonName(personFolder), photos: [], profileTextPath: '', profileText: '' });
+        const item = grouped.get(personFolder);
+        if (/^photos\//i.test(rel) && /\.(jpe?g|png|webp|gif)$/i.test(rel)) {
+          item.photos.push(`https://raw.githubusercontent.com/${info.owner}/${info.repo}/${GITHUB_BRANCH}/${encodePath(path)}`);
+        } else if (/^profile_text\.txt$/i.test(rel)) {
+          item.profileTextPath = `https://raw.githubusercontent.com/${info.owner}/${info.repo}/${GITHUB_BRANCH}/${encodePath(path)}`;
+        }
+      }
+      let arr = Array.from(grouped.values()).filter(x => x.photos.length || x.profileTextPath);
+      if (arr.length) {
+        await Promise.all(arr.map(async item => {
+          if (!item.profileTextPath) return;
+          try {
+            const r = await fetch(item.profileTextPath, { cache: 'no-store' });
+            if (r.ok) item.profileText = await r.text();
+          } catch (_) {}
+        }));
+        return arr.map(normalizeManifestItem);
+      }
+    }
+  } catch (err) {
+    console.warn('GitHub assets fallback failed:', err);
+  }
+  return [];
+}
+async function loadPeople() {
+  let list = manifestPeople();
+  if (!list.length) list = await loadGithubAssetsFallback();
+  if (!list.length) {
+    list = FALLBACK_PEOPLE.map((p, i) => ({...p, id:p.id || `fallback-${i}`, photos:p.image?[p.image]:[], profileText:''}));
+  }
+  const seen = new Set();
+  people = list.filter(p => {
+    const key = (p.name || '').replace(/\s+/g, ' ').trim();
+    if (!key || seen.has(key)) return false;
+    seen.add(key); return true;
+  });
+}
 function imgMarkup(person) {
-  return `<img src="${person.image}" alt="${person.name}">`;
+  const src = person.image || (person.photos && person.photos[0]) || '';
+  if (!src) return `<span style="display:grid;place-items:center;width:100%;height:100%;font-size:42px;opacity:.65">🕯️</span>`;
+  return `<img src="${escapeHtml(src)}" alt="${escapeHtml(person.name)}" loading="lazy">`;
 }
 function matches(person, q) {
   if (!q) return true;
-  return `${person.name} ${person.place} ${person.role || ''}`.includes(q);
+  return `${person.name} ${person.place || ''} ${person.role || ''} ${person.profileText || ''}`.includes(q);
 }
 function filteredPeople() {
   const q = searchInput ? searchInput.value.trim() : '';
-  const seen = new Set();
-  return people.filter(person => {
-    if (!matches(person, q)) return false;
-    const key = person.id || person.name;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
+  return people.filter(person => matches(person, q));
 }
 function openLightbox(person) {
   lightboxImg.innerHTML = imgMarkup(person);
   lightboxTitle.textContent = person.name;
   lightboxPlace.textContent = person.place || '';
+  lightboxRole.textContent = person.role || '';
+  lightboxRole.style.display = person.role ? '' : 'none';
+  lightboxText.textContent = person.profileText || 'לא נמצא profile_text.txt עבור אדם זה.';
+  const photos = (person.photos || []).slice(1, 13);
+  lightboxGallery.innerHTML = photos.map(src => `<img src="${escapeHtml(src)}" alt="${escapeHtml(person.name)}" loading="lazy">`).join('');
+  lightboxGallery.style.display = photos.length ? 'grid' : 'none';
   lightbox.classList.add('is-open');
   lightbox.setAttribute('aria-hidden','false');
   document.body.style.overflow = 'hidden';
@@ -273,31 +416,72 @@ lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', e => { if (e.target.dataset.close) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox(); });
 
-const cardsGrid = document.getElementById('cardsGrid');
-const countStatus = document.getElementById('countStatus');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const emptySearch = document.getElementById('emptySearch');
-
-function makePersonCard(person) {
-  const btn = document.createElement('button');
-  btn.type = 'button';
-  btn.className = 'person-card memory-slot';
-  btn.innerHTML = `<span class="photo-holder">${imgMarkup(person)}</span><span class="slot-name">${person.name}<br><span class="person-place">${person.place || ''}</span></span>`;
-  btn.addEventListener('click', () => openLightbox(person));
-  return btn;
+function buildCards() {
+  posterGrid.innerHTML = '';
+  cards = Array.from({ length: slotsCount }, (_, i) => {
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'memory-slot';
+    card.setAttribute('aria-label', `פתיחת כרטיס זיכרון ${i + 1}`);
+    posterGrid.appendChild(card);
+    return card;
+  });
 }
-function renderCards() {
-  const active = filteredPeople();
-  cardsGrid.innerHTML = '';
+function setCard(card, person) {
+  if (!person) {
+    card.hidden = true; card.onclick = null; card.innerHTML = ''; return;
+  }
+  card.hidden = false;
+  card.style.visibility = '';
+  card.innerHTML = `<span class="photo-holder">${imgMarkup(person)}</span><span class="slot-name">${escapeHtml(person.name)}</span>`;
+  card.onclick = () => openLightbox(person);
+}
+function render() {
+  active = filteredPeople();
   emptySearch.classList.toggle('show', !active.length);
-  countStatus.textContent = `${active.length} מתוך ${people.length}`;
-  active.forEach(person => cardsGrid.appendChild(makePersonCard(person)));
+  if (!active.length) {
+    cards.forEach(card => setCard(card, null));
+    statusText.textContent = people.length ? '0 תוצאות' : 'לא נטענו אנשים';
+    return;
+  }
+  if (startIndex >= active.length) startIndex = 0;
+  const visiblePeople = active.slice(startIndex, startIndex + slotsCount);
+  for (let i=0; i<slotsCount; i++) setCard(cards[i], visiblePeople[i] || null);
+  const end = Math.min(active.length, startIndex + visiblePeople.length);
+  statusText.textContent = `${startIndex + 1}-${end} מתוך ${active.length}`;
 }
-searchInput.addEventListener('input', renderCards);
-prevBtn.addEventListener('click', () => window.scrollBy({top: -window.innerHeight*.82, behavior:'smooth'}));
-nextBtn.addEventListener('click', () => window.scrollBy({top: window.innerHeight*.82, behavior:'smooth'}));
-renderCards();
+function move(direction, withFade=true) {
+  if (!active.length) return;
+  if (withFade) cards.forEach(c => c.classList.add('is-fading'));
+  setTimeout(() => {
+    const lastPageStart = Math.max(0, Math.floor((active.length - 1) / slotsCount) * slotsCount);
+    startIndex += direction * slotsCount;
+    if (startIndex > lastPageStart) startIndex = 0;
+    if (startIndex < 0) startIndex = lastPageStart;
+    render();
+    cards.forEach(c => c.classList.remove('is-fading'));
+  }, withFade ? 520 : 0);
+}
+function startTimer() {
+  clearInterval(timer);
+  if (active.length > slotsCount) timer = setInterval(() => move(1, true), 9000);
+}
+function refresh() { startIndex = 0; render(); startTimer(); }
+
+searchInput.addEventListener('input', refresh);
+prevBtn.addEventListener('click', () => { move(-1, true); startTimer(); });
+nextBtn.addEventListener('click', () => { move(1, true); startTimer(); });
+window.addEventListener('resize', () => {
+  const nextCount = SLOTS_PER_ROUND;
+  if (nextCount !== slotsCount) { slotsCount = nextCount; buildCards(); refresh(); }
+});
+
+(async function init() {
+  statusText.textContent = 'טוען...';
+  await loadPeople();
+  buildCards();
+  refresh();
+})();
 </script>
 </body>
 </html>
