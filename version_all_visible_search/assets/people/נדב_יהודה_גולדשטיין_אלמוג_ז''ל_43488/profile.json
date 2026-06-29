@@ -1,0 +1,208 @@
+{
+  "id": "43488",
+  "name": "נדב יהודה גולדשטיין אלמוג ז''ל",
+  "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/Page/Default.aspx?ID=43488",
+  "age_text": "בן 48 במותו",
+  "death_date_text": "כ\"ב בתשרי תשפ\"ד, 7/10/2023",
+  "residence": "כפר עזה",
+  "event_place": "כפר עזה",
+  "burial_place": "קיבוץ כפר עזה",
+  "parents": "בן ורדה ודוד",
+  "survived_by": "אישה ושלושה ילדים, הורים ושלוש אחיות",
+  "memorial": "נדב יהודה מונצח באנדרטה בהר הרצל בלוח מס' 85",
+  "matched_terms": [
+    "כפר עזה"
+  ],
+  "matched_variants": [
+    "כפר עזה"
+  ],
+  "matched_contexts": [
+    "residence_field",
+    "event_place_field",
+    "residence_line",
+    "event_line"
+  ],
+  "matched_evidence": [
+    "residence_field: כפר עזה",
+    "event_place_field: כפר עזה",
+    "residence_line: התגורר בכפר עזה",
+    "event_line: מקום אירוע: כפר עזה"
+  ],
+  "discovery_sources": [
+    "listing:https://laad.btl.gov.il/Web/He/HaravotBarzelWar/Default.aspx:page:6"
+  ],
+  "image_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\photos\\photo_001.jpg",
+  "image_url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043488/NP_043488_11.jpg",
+  "photo_count": 7,
+  "photos_folder": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\photos",
+  "photos": [
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\photos\\photo_001.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043488/NP_043488_11.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/Page/Default.aspx?ID=43488",
+      "content_type": "image/jpeg",
+      "bytes": 60759
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\photos\\photo_002.jpg",
+      "url": "https://laad.btl.gov.il/Items/00334/002.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/Page/Default.aspx?ID=43488",
+      "content_type": "image/jpeg",
+      "bytes": 112333
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\photos\\photo_003.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043488/NP_043488_10.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488",
+      "content_type": "image/jpeg",
+      "bytes": 78938
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\photos\\photo_004.jpg",
+      "url": "https://laad.btl.gov.il/Items/00335/003.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488",
+      "content_type": "image/jpeg",
+      "bytes": 84524
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\photos\\photo_005.jpg",
+      "url": "https://laad.btl.gov.il/view_files/HeapItem_pic/070119/HP_070119_10.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119",
+      "content_type": "image/jpeg",
+      "bytes": 30108
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\photos\\photo_006.jpg",
+      "url": "https://laad.btl.gov.il/view_files/HeapItem_pic/070119/HP_070119_11.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119",
+      "content_type": "image/jpeg",
+      "bytes": 34226
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\photos\\photo_007.jpg",
+      "url": "https://laad.btl.gov.il/Items/00333/001.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1",
+      "content_type": "image/jpeg",
+      "bytes": 152123
+    }
+  ],
+  "inner_page_count": 12,
+  "inner_pages": [
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_01.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 2,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_02.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 2,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_03.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 1,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119&fbrefresh=1",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_04.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_05.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_06.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_07.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_08.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_09.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_10.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_11.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נדב יהודה גולדשטיין אלמוג ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\inner_pages\\gallery_12.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    }
+  ],
+  "gallery_urls": [
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&connect=70119&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43488&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1"
+  ],
+  "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\profile_text.txt",
+  "all_text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\all_text_profile_and_inner_pages.txt",
+  "gallery_manifest_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488\\gallery_manifest.json",
+  "folder": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נדב_יהודה_גולדשטיין_אלמוג_ז''ל_43488",
+  "full_text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nשיתוף בפייסבוק הדפסת תווית לנר זיכרון בן 48 במותו\nבן ורדה ודוד\nנולד בכ' בכסלו תשל\"ה, 3/12/1974\nהתגורר בכפר עזה\nחלל פעולת איבה\nבכ\"ב בתשרי תשפ\"ד, 7/10/2023\nמקום אירוע: כפר עזה\nהובא למנוחת עולמים בקיבוץ כפר עזה\nחלקה: צפון-מזרחיית, צמוד לגדר\nהותיר: אישה ושלושה ילדים, הורים ושלוש אחיות\nנדב יהודה מונצח באנדרטה בהר הרצל בלוח מס' 85\nקורות חיים\nבשבת כ\"ב בתשרי, שמחת תורה תשפ\"ד, 7 באוקטובר 2023, פתח בשעה שש וחצי בבוקר ארגון הטרור חמאס בירי טילים ורקטות מרצועת עזה לדרום ולמרכז ישראל. בשעות הבאות חדרו אלפי מחבלים את גדר הגבול מרצועת עזה למדינת ישראל והחלה מתקפה רצחנית על יישובי עוטף עזה - קיבוצים ומושבים, על הערים הסמוכות שדרות, אופקים ונתיבות, על מבלי מסיבות טבע סמוך לקיבוצים רעים ונירים, על בסיסי צה\"ל ועל העוברים בדרכים באזור. המחבלים רצחו כ-800 אזרחים בבתיהם, במכוניותיהם ובעת שבילו במסיבות, חטפו לרצועת עזה מאות ישראלים ועובדים זרים מהקיבוצים, החריבו בתים רבים ביישובים ולמעלה מ-350 חיילים ושוטרים נפלו בטרם הצליחו כיתות הכוננות המקומיות וכוחות צה\"ל להשתלט על השטח.\nבבוקר זה החלה מלחמה.\nאנו עושים כל מאמץ לדייק במידע המופיע, ומתנצלים אם אירעה טעות.\nאם ברצונכם להעיר או לתקן פרטים בדף זה, אנא צרו קשר.\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנדב יהודה גולדשטיין אלמוג ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+  "error": ""
+}
