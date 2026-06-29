@@ -1,25 +1,24 @@
-גרסת faded leaf מקורית + assets/people v7
+גרסה v11 - הצגת כל האנשים
 
-מה חדש:
-- העיצוב נשאר מבוסס על הקובץ המקורי.
-- אין צורך ב-data.js.
-- התמונות הראשיות בכרטיסים נלקחות קודם מתוך assets/people-original לפי מיפוי השמות המקורי.
-- התמונות בתוך הפופ-אפ נלקחות מתוך תיקיית photos של כל אדם, למשל:
-  assets/people/אביב_ורטהיים_ז''ל_43495/photos/
-- הטקסט בפופ-אפ נלקח מתוך profile_text.txt באותה תיקיית אדם.
+מה יש בגרסה הזו:
+- קובץ יחיד: index.html
+- אין צורך ב-data.js
+- אין צורך ב-people_assets_manifest.js
+- אין צורך ב-BAT
 
-מבנה מומלץ:
-version_fade_search/
-  index.html
-  people_assets_manifest.js
-  run_build_manifest_windows.bat
-  tools/
-  assets/
-    people-original/   ← תמונות ראשיות קיימות, למשל person-035.jpg
-    people/            ← תיקיות אדם עם profile_text.txt ו-photos
+מה השתנה:
+- האתר לא מסתמך רק על הרשימה הפנימית.
+- הוא קורא גם את כל התיקיות מתוך assets/people דרך GitHub API.
+- לכן גם אדם שאין לו עדיין profile_text.txt או photos עדיין יופיע ברוטציה, עם שם ותמונה אם נמצאה.
+- אם אין תמונה, יוצג עיגול placeholder עד שתתווסף תמונה.
 
-אחרי שמעתיקים/מעדכנים את assets/people:
-1. להפעיל run_build_manifest_windows.bat במחשב.
-2. לוודא ש-people_assets_manifest.js לא ריק.
-3. להעלות ל-GitHub את index.html ואת people_assets_manifest.js, ואת תיקיות assets.
-4. לעשות Ctrl+F5 בדפדפן.
+מבנה תיקיות נדרש:
+assets/people-original
+assets/people
+
+העלאה:
+החליפי רק את index.html בקובץ הזה והשאירי את תיקיות assets כמו שהן.
+אחרי העלאה בצעי Ctrl+F5 בדפדפן.
+
+חשוב:
+הגרסה משתמשת ב-GitHub API ולכן הריפו/האתר צריכים להיות ציבוריים.
