@@ -38,6 +38,38 @@ def read_text_file(path: Path) -> str:
     return path.read_text(errors='replace')
 
 
+
+
+def clean_profile_text(raw: str) -> str:
+    text = raw or ''
+    patterns = [
+        r'שיתוף\s+בפייסבוק\s+הדפסת\s+תווית\s+לנר\s+זיכרון',
+        r'שיתוף\s+בפייסבוק',
+        r'הדפסת\s+תווית\s+לנר\s+זיכרון',
+    ]
+    for pat in patterns:
+        text = re.sub(pat, '', text)
+    bad_exact = {
+        'עבור לתפריט נושאים', 'עבור למפת האתר', 'אזרחים חללי פעולות איבה - חיפוש',
+        'חללי "חרבות ברזל"', 'האנדרטה לזכרם בהר הרצל', 'דבר שר העבודה',
+        'דבר מנכ"ל הביטוח הלאומי', 'מידע שימושי למשפחות השכולות',
+        'אוגדן זכויות למשפחות חללי פעולות האיבה', 'על אודות האתר', 'דף חלל',
+        'אלבום זיכרון', 'תמונות המצבה', 'בניית אתרים:', 'פיתוח מאגרי מידע',
+    }
+    clean_lines = []
+    for line in text.replace('\r', '\n').split('\n'):
+        line = line.strip()
+        if not line:
+            continue
+        if line in bad_exact:
+            continue
+        if re.match(r'^(עבור|מידע שימושי|אוגדן זכויות|בניית אתרים|פיתוח מאגרי מידע)', line):
+            continue
+        if line.startswith('אנו עושים כל מאמץ לדייק') or line.startswith('אם ברצונכם להעיר או לתקן'):
+            continue
+        clean_lines.append(line)
+    return '\n'.join(clean_lines)
+
 def main():
     out = ROOT / 'people_assets_manifest.js'
     people = []
@@ -59,7 +91,7 @@ def main():
                 photos = [rel(p) for p in sorted(photos_dir.rglob('*')) if p.is_file() and p.suffix.lower() in IMG_EXTS]
 
             profile = person_dir / 'profile_text.txt'
-            profile_text = read_text_file(profile) if profile.exists() else ''
+            profile_text = clean_profile_text(read_text_file(profile)) if profile.exists() else ''
 
             if not photos and not profile_text:
                 continue
