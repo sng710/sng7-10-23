@@ -5,146 +5,23 @@
     poem1: 'כולנו רקמה אנושית אחת חיה',
     poem2: 'ואם אחד מאיתנו הולך מעמנו',
     poem3: 'משהו מת בנו - ומשהו, נשאר איתו',
-    next: 'הבא',
-    prev: 'קודם',
-    pause: 'עצירה',
-    play: 'המשך',
-    search: 'חיפוש שם...',
-    page: 'דף זיכרון',
-    zl: 'ז״ל',
-    noResults: 'לא נמצאו תוצאות',
-    displaying: 'מוצגים',
-    from: 'מתוך',
-    noText: 'לא נמצא טקסט להצגה עבור אדם זה. יש לוודא שקיים profile_text.txt ושהרצת את run_build_manifest_windows.bat.',
-    noManifest: 'לא נטענו אנשים. אם people_assets_manifest.js ריק, צריך להריץ run_build_manifest_windows.bat אחרי שתיקיית האנשים נמצאת בתוך assets/people או assets/people-original, ואז להעלות מחדש את people_assets_manifest.js.'
+    next: 'הבא', prev: 'קודם', pause: 'עצירה', play: 'המשך', search: 'חיפוש שם...',
+    page: 'דף זיכרון', zl: 'ז״ל', noResults: 'לא נמצאו תוצאות', loading: 'טוען אנשים...',
+    noPeople: 'לא נטענו אנשים. בדקי שהתיקייה assets/people-original קיימת או שהקובץ people_assets_manifest.js נוצר מחדש.',
+    displaying: 'מוצגים', from: 'מתוך'
   };
-
-
-  const GH_TEXT_PRIORITY = ['profile_text.txt','summary.txt','person_summary.txt','all_text_profile_and_inner_pages.txt'];
-  const GH_IMAGE_EXTS = /\.(jpe?g|png|webp|gif|avif)$/i;
-  function githubRawUrl(owner, repo, branch, path){ return 'https://raw.githubusercontent.com/' + encodeURIComponent(owner) + '/' + encodeURIComponent(repo) + '/' + encodeURIComponent(branch) + '/' + path.split('/').map(encodeURIComponent).join('/'); }
-  function getGithubPageContext(){
-    const host = window.location.hostname || '';
-    if(!host.endsWith('.github.io')) return null;
-    const owner = host.replace(/\.github\.io$/,'');
-    const parts = window.location.pathname.split('/').filter(Boolean);
-    if(!owner || !parts.length) return null;
-    const repo = parts[0];
-    let pageDirParts = parts.slice(1);
-    if(pageDirParts.length && /\.[a-z0-9]+$/i.test(pageDirParts[pageDirParts.length-1])) pageDirParts = pageDirParts.slice(0,-1);
-    return {owner, repo, pageDir: pageDirParts.join('/')};
-  }
-  async function fetchGithubTree(owner, repo, branch){
-    const url = 'https://api.github.com/repos/' + encodeURIComponent(owner) + '/' + encodeURIComponent(repo) + '/git/trees/' + encodeURIComponent(branch) + '?recursive=1';
-    const res = await fetch(url, {cache:'no-store'});
-    if(!res.ok) throw new Error('GitHub tree failed ' + res.status);
-    return await res.json();
-  }
-  async function tryLoadFromGithubWhenManifestEmpty(){
-    if(ASSET_MANIFEST.length) return [];
-    const ctx = getGithubPageContext();
-    if(!ctx) return [];
-    const branches = ['main','master'];
-    const candidates = [ctx.pageDir + '/assets/people-original', ctx.pageDir + '/assets/people'].map(x => x.replace(/^\//,'').replace(/\/+/g,'/'));
-    for(const branch of branches){
-      let data;
-      try{ data = await fetchGithubTree(ctx.owner, ctx.repo, branch); }catch(e){ continue; }
-      const tree = Array.isArray(data.tree) ? data.tree : [];
-      for(const prefixRaw of candidates){
-        const prefix = prefixRaw.replace(/\/+$|^\/+/, '');
-        const files = tree.filter(x => x && x.type === 'blob' && typeof x.path === 'string' && x.path.startsWith(prefix + '/'));
-        if(!files.length) continue;
-        const byFolder = new Map();
-        files.forEach(f => {
-          const rest = f.path.slice(prefix.length + 1);
-          const parts = rest.split('/');
-          const folder = parts.shift();
-          if(!folder || parts.length === 0) return;
-          if(!byFolder.has(folder)) byFolder.set(folder, {folder, baseUrl: prefix, textPath:'', photos:[]});
-          const item = byFolder.get(folder);
-          const rel = parts.join('/');
-          const filename = parts[parts.length-1].toLowerCase();
-          if(parts[0] === 'photos' && GH_IMAGE_EXTS.test(filename)) item.photos.push(githubRawUrl(ctx.owner, ctx.repo, branch, f.path));
-          if(parts.length === 1 && GH_TEXT_PRIORITY.includes(filename)){
-            const existingRank = item.textPath ? GH_TEXT_PRIORITY.indexOf(item.textName) : 999;
-            const rank = GH_TEXT_PRIORITY.indexOf(filename);
-            if(rank >= 0 && rank < existingRank){ item.textPath = f.path; item.textName = filename; }
-          }
-        });
-        const people = [];
-        for(const item of byFolder.values()){
-          let profileText = '';
-          if(item.textPath){
-            try{
-              const tr = await fetch(githubRawUrl(ctx.owner, ctx.repo, branch, item.textPath), {cache:'force-cache'});
-              if(tr.ok) profileText = cleanDisplayText(await tr.text());
-            }catch(e){}
-          }
-          const name = inferNameFromText(profileText) || assetNameFromFolder(item.folder);
-          people.push({
-            folder: item.folder,
-            baseUrl: item.baseUrl,
-            name,
-            names: unique([name, assetNameFromFolder(item.folder)]),
-            community: inferResidenceFromText(profileText),
-            age: inferAgeFromText(profileText),
-            textFile: item.textName || '',
-            profileText,
-            photos: unique(item.photos)
-          });
-        }
-        if(people.length) return people;
-      }
-    }
-    return [];
-  }
-  function inferNameFromText(profileText){
-    const lines = cleanDisplayText(profileText).split('\n').slice(0,25);
-    for(const line of lines){
-      if(/ז[״"'׳`]{0,2}\s*ל/.test(line) && line.length <= 90) return cleanName(line);
-    }
-    return '';
-  }
 
   const BATCH_SIZE = 6;
   const ROTATE_MS = 7600;
   const FADE_MS = 650;
-  let ASSET_MANIFEST = Array.isArray(window.PEOPLE_ASSETS_MANIFEST) ? window.PEOPLE_ASSETS_MANIFEST : [];
-
   const preferredFirst = [
-    'אופיר ליבשטיין',
-    'עומר צדיקביץ',
-    'אילן פיורנטינו',
-    'שחר אביאני',
-    'מירה שטהל',
-    'נדב עמיקם'
+    'אופיר ליבשטיין','עומר צדיקביץ','אילן פיורנטינו','שחר אביאני','מירה שטהל','נדב עמיקם'
   ];
+  const IMAGE_RE = /\.(jpe?g|png|webp|gif|avif)$/i;
+  const TEXT_PRIORITY = ['profile_text.txt','summary.txt','person_summary.txt','all_text_profile_and_inner_pages.txt'];
+  const PEOPLE_ROOTS = ['assets/people-original','assets/people','assets/people_original'];
 
-  const BOILERPLATE_LINES = [
-    /^עבור לתפריט/,
-    /^עבור למפת האתר/,
-    /^אזרחים חללי פעולות איבה/,
-    /^חללי "?חרבות ברזל"?/,
-    /^האנדרטה לזכרם בהר הרצל$/,
-    /^דבר שר/,
-    /^דבר מנכ/,
-    /^מידע שימושי/,
-    /^אוגדן זכויות/,
-    /^על אודות האתר$/,
-    /^דף חלל$/,
-    /^אלבום זיכרון$/,
-    /^תמונות המצבה$/,
-    /^בניית אתרים:?$/,
-    /^פיתוח מאגרי מידע$/,
-    /^שיתוף בפייסבוק/,
-    /^הדפסת תווית/,
-    /^אנו עושים כל מאמץ/,
-    /^אם ברצונכם להעיר/,
-    /^פרטים אישיים והנצחה:?$/,
-    /^קורות חיים$/
-  ];
-
-  const $ = (sel, root=document) => root.querySelector(sel);
+  const $ = (sel) => document.querySelector(sel);
   const stage = $('#memoryStage');
   const countLine = $('#countLine');
   const searchInput = $('#searchInput');
@@ -153,7 +30,6 @@
   const pauseBtn = $('#pauseBtn');
   const modal = $('#personModal');
   const modalCard = modal ? modal.querySelector('.modal-card') : null;
-
   let allPeople = [];
   let filteredPeople = [];
   let batches = [];
@@ -170,25 +46,37 @@
   if(searchInput) searchInput.placeholder = T.search;
 
   function text(v){ return v == null ? '' : String(v).trim(); }
-  function cleanName(name){
-    return text(name)
-      .replace(/^\d+[_\-\s]*/,'')
-      .replace(/_/g,' ')
-      .replace(/\s*ז[״"'׳`]{0,2}\s*ל\s*$/g,'')
-      .replace(/\s+/g,' ')
-      .trim();
-  }
-  function normalizeForSearch(v){ return cleanName(v).toLowerCase().replace(/[\u0591-\u05C7]/g,'').replace(/["'״׳`]/g,'').replace(/[_\-–—.,;:()\[\]{}]/g,' ').replace(/\s+/g,' ').trim(); }
   function esc(v){ return text(v).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
-  function unique(arr){ return Array.from(new Set(arr.map(text).filter(Boolean))); }
+  function cleanName(name){
+    return text(name).replace(/^\d+[_\-\s]*/,'').replace(/_/g,' ')
+      .replace(/\s*ז[\"״'׳`]{0,2}\s*ל\s*$/,'')
+      .replace(/\s+/g,' ').trim();
+  }
+  function normalizeForSearch(v){
+    return cleanName(v).toLowerCase().replace(/[\u0591-\u05C7]/g,'').replace(/["'״׳`]/g,'').replace(/[\-–—_.,:;()\[\]{}]/g,' ').replace(/\s+/g,' ').trim();
+  }
+  function decodePathSegment(v){ try { return decodeURIComponent(v); } catch(e){ return v; } }
+  function encodePathForUrl(path){
+    return path.split('/').filter(Boolean).map(seg => encodeURIComponent(decodePathSegment(seg))).join('/');
+  }
+  function rawUrl(owner, repo, branch, path){
+    return 'https://raw.githubusercontent.com/' + encodeURIComponent(owner) + '/' + encodeURIComponent(repo) + '/' + encodeURIComponent(branch) + '/' + encodePathForUrl(path);
+  }
 
-  function cleanDisplayText(s){
+  const BOILERPLATE_PATTERNS = [
+    /^עבור לתפריט/, /^עבור למפת האתר/, /^אזרחים חללי פעולות איבה/, /^חללי ["״]?חרבות ברזל["״]?/,
+    /^האנדרטה לזכרם בהר הרצל$/, /^דבר שר/, /^דבר מנכ/, /^מידע שימושי/, /^אוגדן זכויות/,
+    /^על אודות האתר$/, /^דף חלל$/, /^אלבום זיכרון$/, /^תמונות המצבה$/, /^בניית אתרים:?$/,
+    /^פיתוח מאגרי מידע$/, /^שיתוף בפייסבוק/, /^הדפסת תווית/, /^אנו עושים כל מאמץ/, /^אם ברצונכם להעיר/,
+    /^פרטים אישיים והנצחה:?$/, /^קורות חיים$/
+  ];
+  function cleanProfileText(s){
     const lines = [];
     const seen = new Set();
     text(s).replace(/\r/g,'').split('\n').forEach(raw => {
       const line = raw.replace(/\s+/g,' ').trim();
       if(!line) return;
-      if(BOILERPLATE_LINES.some(rx => rx.test(line))) return;
+      if(BOILERPLATE_PATTERNS.some(rx => rx.test(line))) return;
       const key = line.replace(/[\s"'״׳`.,:;()\[\]{}_-]+/g,'');
       if(key.length < 120 && seen.has(key)) return;
       if(key.length < 120) seen.add(key);
@@ -196,126 +84,123 @@
     });
     return lines.join('\n').trim();
   }
-  function nl2p(v){
-    const cleaned = cleanDisplayText(v);
-    if(!cleaned) return '<p>'+esc(T.noText)+'</p>';
-    return cleaned.split(/\n{2,}/).map(block => {
-      const compact = block.split('\n').filter(Boolean);
-      return '<p>' + compact.map(esc).join('<br>') + '</p>';
-    }).join('');
-  }
-
-  function firstImageFromRaw(p){
-    const candidates = [p.photo,p.image,p.img,p.src,p.portrait,p.mainImage,p.thumbnail,p.imageUrl,p.photoUrl];
-    if(Array.isArray(p.images) && p.images.length){
-      const im = p.images.find(x => typeof x === 'string') || p.images.find(x => x && (x.src || x.url || x.path));
-      if(typeof im === 'string') candidates.push(im); else if(im) candidates.push(im.src || im.url || im.path);
+  function inferNameFromText(profileText){
+    const cleaned = cleanProfileText(profileText);
+    const lines = cleaned.split('\n').slice(0,25);
+    for(const line of lines){
+      if(/ז[\"״'׳`]{0,2}\s*ל/.test(line) && line.length <= 90) return cleanName(line);
     }
-    return text(candidates.find(Boolean));
-  }
-  function getStory(p){ return text(p.profileText || p.storySummaryClean || p.storySummary || p.summary_he || p.summary || p.description || p.bio || p.story || p.content || p.role); }
-  function inferResidenceFromText(story){
-    const s = text(story);
-    const patterns = [/התגורר(?:ה)?\s+ב([^\n,.]+)/, /מקום אירוע:\s*([^\n,.]+)/, /מקום מגורים:\s*([^\n,.]+)/];
-    for(const rx of patterns){ const m = s.match(rx); if(m) return text(m[1]); }
     return '';
   }
-  function inferAgeFromText(story){
-    const m = text(story).match(/(?:בן|בת)\s+(\d{1,3})\s+במות/);
+  function inferCommunity(profileText){
+    const s = profileText || '';
+    const patterns = [/התגורר(?:ה)?\s+ב([^\n,.]+)/, /מקום אירוע:\s*([^\n,.]+)/, /מקום מגורים:\s*([^\n,.]+)/];
+    for(const rx of patterns){ const m = s.match(rx); if(m) return m[1].replace(/\s+/g,' ').trim(); }
+    return '';
+  }
+  function inferAge(profileText){
+    const m = (profileText || '').match(/(?:בן|בת)\s+(\d{1,3})\s+במות/);
     return m ? (m[1] + ' במותו/ה') : '';
   }
-  function assetNameFromFolder(folder){ return cleanName(text(folder).split('/').pop()); }
-
-  function personFromAsset(asset, i){
-    const name = cleanName(asset.name || asset.displayName || assetNameFromFolder(asset.folder) || ('אדם ' + (i+1)));
-    const photos = unique(Array.isArray(asset.photos) ? asset.photos : []);
-    const story = cleanDisplayText(asset.profileText || asset.text || asset.summaryText || '');
-    const community = text(asset.community || asset.place || inferResidenceFromText(story));
-    return {
-      raw: asset,
-      name,
-      id: asset.id || asset.slug || asset.folder || ('asset-' + i),
-      photo: photos[0] || '',
-      photos,
-      asset,
-      community,
-      age: text(asset.age || inferAgeFromText(story)),
-      role: text(asset.role || asset.subtitle || ''),
-      story,
-      familyGroupId: text(asset.familyGroupId || asset.family_group_id || asset.familyGroupTitle || ''),
-      search: normalizeForSearch([name, community, story, asset.folder].join(' '))
-    };
-  }
-
-  function bestAssetFor(raw, name, photo){
-    if(!ASSET_MANIFEST.length) return null;
-    const explicitFolder = text(raw.assetsFolder || raw.assetFolder || raw.peopleFolder || raw.folder || raw.directory || raw.personFolder);
-    if(explicitFolder){
-      const f = explicitFolder.replace(/^assets\/(?:people|people-original)\//,'').replace(/[\\/]+$/,'');
-      const exact = ASSET_MANIFEST.find(a => text(a.folder) === f || text(a.folder).endsWith('/'+f));
-      if(exact) return exact;
-    }
-    if(photo && (photo.includes('assets/people/') || photo.includes('assets/people-original/'))){
-      const m = photo.match(/assets\/(?:people|people-original)\/([^/]+)/);
-      if(m){
-        const rawFolder = decodeURIComponent(m[1]);
-        const exact = ASSET_MANIFEST.find(a => text(a.folder) === rawFolder || encodeURIComponent(text(a.folder)) === m[1]);
-        if(exact) return exact;
-      }
-    }
-    const personNorm = normalizeForSearch(name);
-    const personTokens = personNorm.split(/\s+/).filter(x => x.length > 1);
-    let best = null;
-    ASSET_MANIFEST.forEach(a => {
-      const names = unique([a.name, a.displayName, assetNameFromFolder(a.folder), ...(Array.isArray(a.names) ? a.names : [])]);
-      let score = 0;
-      names.forEach(n => {
-        const nn = normalizeForSearch(n);
-        if(!nn) return;
-        if(nn === personNorm) score = Math.max(score, 100);
-        else if(nn.includes(personNorm) || personNorm.includes(nn)) score = Math.max(score, 90);
-        else {
-          const at = new Set(nn.split(/\s+/).filter(x => x.length > 1));
-          const hit = personTokens.filter(t => at.has(t)).length;
-          if(hit >= 2) score = Math.max(score, Math.round(hit / Math.max(personTokens.length, at.size) * 80));
-        }
-      });
-      if(!best || score > best.score) best = {score, asset: a};
-    });
-    return best && best.score >= 45 ? best.asset : null;
-  }
+  function firstImage(p){ return (Array.isArray(p.photos) && p.photos[0]) || (Array.isArray(p.images) && p.images[0]) || p.photo || p.image || ''; }
+  function getStory(p){ return cleanProfileText(p.profileText || p.storySummaryClean || p.storySummary || p.summary_he || p.summary || p.description || p.bio || p.story || p.content || ''); }
 
   function normalizePerson(raw, i){
-    const name = cleanName(raw.name || raw.fullName || raw.title || raw.excelDisplayName || raw.updatedExcelName || ('person ' + (i+1)));
-    const rawPhoto = firstImageFromRaw(raw);
-    const asset = bestAssetFor(raw, name, rawPhoto);
-    const photos = unique([...(asset && Array.isArray(asset.photos) ? asset.photos : []), ...(Array.isArray(raw.images) ? raw.images.map(x => typeof x === 'string' ? x : (x && (x.src || x.url || x.path))) : []), rawPhoto]);
-    const story = cleanDisplayText((asset && asset.profileText) || getStory(raw));
-    const community = text(raw.community || raw.place || raw.residence || raw.location || raw.eventPlace || inferResidenceFromText(story));
+    const story = getStory(raw);
+    const name = cleanName(raw.name || raw.fullName || raw.title || inferNameFromText(story) || raw.folder || ('person ' + (i+1)));
+    const photos = Array.isArray(raw.photos) ? raw.photos.filter(Boolean) : (firstImage(raw) ? [firstImage(raw)] : []);
+    const community = text(raw.community || raw.place || raw.residence || raw.location || raw.eventPlace || inferCommunity(story));
+    const age = text(raw.age || raw.ageText || inferAge(story));
     return {
-      raw, name, id: raw.id || raw.slug || (asset && asset.folder) || ('p-' + i),
-      photo: photos[0] || '',
-      photos,
-      asset,
-      community,
-      age: text(raw.age || raw.ageText || inferAgeFromText(story)),
+      raw, name, id: raw.id || raw.folder || ('p-' + i), folder: raw.folder || '',
+      photo: photos[0] || '', photos,
+      community, age,
       role: text(raw.role || raw.job || raw.subtitle || raw.guardRole),
       story,
-      familyGroupId: text(raw.familyGroupId || raw.family_group_id || raw.familyGroupTitle || ''),
-      search: normalizeForSearch([name, community, raw.role, raw.eventPlace, raw.familyGroupTitle, story, asset && asset.folder].join(' '))
+      familyGroupId: text(raw.familyGroupId || raw.family_group_id || raw.familyGroupTitle),
+      search: normalizeForSearch([name, community, age, raw.folder, story].join(' '))
     };
   }
 
-  function readPeople(){
-    const candidates = [window.MEMORIAL_PEOPLE, window.FALLEN_PEOPLE, window.PEOPLE, window.people, window.peopleData, window.fallenPeople];
-    let data = candidates.find(Array.isArray);
-    if(!data){
-      const el = document.getElementById('peopleData');
-      if(el){ try{ data = JSON.parse(el.textContent); } catch(e){} }
+  function peopleFromManifest(){
+    const data = Array.isArray(window.PEOPLE_ASSETS_MANIFEST) ? window.PEOPLE_ASSETS_MANIFEST : [];
+    if(data.length) return data.map(normalizePerson).filter(p => p.name);
+    const legacy = [window.MEMORIAL_PEOPLE, window.FALLEN_PEOPLE, window.PEOPLE, window.people, window.peopleData, window.fallenPeople].find(Array.isArray);
+    return Array.isArray(legacy) ? legacy.map(normalizePerson).filter(p => p.name) : [];
+  }
+
+  function getGitHubContext(){
+    const host = location.hostname;
+    if(!host.endsWith('.github.io')) return null;
+    const owner = host.split('.')[0];
+    const parts = location.pathname.split('/').filter(Boolean);
+    if(!owner || !parts.length) return null;
+    const repo = parts[0];
+    const baseDir = parts.slice(1).join('/').replace(/\/$/,'');
+    return {owner, repo, baseDir};
+  }
+  async function fetchJson(url){
+    const res = await fetch(url, {headers:{'Accept':'application/vnd.github+json'}});
+    if(!res.ok) throw new Error(String(res.status));
+    return await res.json();
+  }
+  async function loadGitHubTree(ctx){
+    const branches = ['main','master'];
+    let lastErr = null;
+    for(const branch of branches){
+      try{
+        const url = 'https://api.github.com/repos/' + encodeURIComponent(ctx.owner) + '/' + encodeURIComponent(ctx.repo) + '/git/trees/' + encodeURIComponent(branch) + '?recursive=1';
+        const json = await fetchJson(url);
+        if(json && Array.isArray(json.tree)) return {branch, tree: json.tree};
+      }catch(e){ lastErr = e; }
     }
-    if(Array.isArray(data) && data.length) return data.map(normalizePerson).filter(p => p.name);
-    if(ASSET_MANIFEST.length) return ASSET_MANIFEST.map(personFromAsset).filter(p => p.name);
-    return [];
+    throw lastErr || new Error('GitHub tree not found');
+  }
+  function groupFromTree(ctx, branch, tree){
+    const roots = PEOPLE_ROOTS.map(root => (ctx.baseDir ? ctx.baseDir + '/' + root : root).replace(/^\/+|\/+$/g,''));
+    let selectedRoot = '';
+    let rootFiles = [];
+    for(const root of roots){
+      const prefix = root + '/';
+      const files = tree.filter(x => x.type === 'blob' && x.path && x.path.startsWith(prefix));
+      if(files.length){ selectedRoot = root; rootFiles = files; break; }
+    }
+    if(!selectedRoot) return [];
+    const groups = new Map();
+    const prefix = selectedRoot + '/';
+    rootFiles.forEach(f => {
+      const rel = f.path.slice(prefix.length);
+      const pieces = rel.split('/');
+      if(pieces.length < 2) return;
+      const folder = pieces[0];
+      if(!folder || ['images','old','backup','backups','tmp','temp'].includes(folder.toLowerCase())) return;
+      if(!groups.has(folder)) groups.set(folder, {folder, files: []});
+      groups.get(folder).files.push({path:f.path, rel:pieces.slice(1).join('/')});
+    });
+    return Array.from(groups.values()).map(g => {
+      const txt = TEXT_PRIORITY.map(t => g.files.find(f => f.rel.toLowerCase() === t.toLowerCase())).find(Boolean)
+        || g.files.find(f => /\.txt$/i.test(f.rel) && !f.rel.includes('/'));
+      const photos = g.files.filter(f => /^photos\//i.test(f.rel) && IMAGE_RE.test(f.rel)).map(f => rawUrl(ctx.owner, ctx.repo, branch, f.path));
+      return {folder:g.folder, textPath: txt ? txt.path : '', photos};
+    }).filter(x => x.textPath || x.photos.length);
+  }
+  async function loadPeopleFromGitHub(){
+    const ctx = getGitHubContext();
+    if(!ctx) return [];
+    const {branch, tree} = await loadGitHubTree(ctx);
+    const groups = groupFromTree(ctx, branch, tree);
+    const people = [];
+    for(const g of groups){
+      let profileText = '';
+      if(g.textPath){
+        try{
+          const res = await fetch(rawUrl(ctx.owner, ctx.repo, branch, g.textPath));
+          if(res.ok) profileText = await res.text();
+        }catch(e){}
+      }
+      people.push(normalizePerson({folder:g.folder, name: inferNameFromText(profileText) || cleanName(g.folder), profileText, photos:g.photos}, people.length));
+    }
+    return people.filter(p => p.name);
   }
 
   function orderPeople(list){
@@ -324,20 +209,18 @@
       const ai = byPreferred.has(normalizeForSearch(a.name)) ? byPreferred.get(normalizeForSearch(a.name)) : 9999;
       const bi = byPreferred.has(normalizeForSearch(b.name)) ? byPreferred.get(normalizeForSearch(b.name)) : 9999;
       if(ai !== bi) return ai - bi;
-      return 0;
+      return String(a.folder || a.name).localeCompare(String(b.folder || b.name), 'he');
     });
   }
   function buildBatches(list){
     const ordered = orderPeople(list);
-    const used = new Set();
-    const units = [];
+    const used = new Set(); const units = [];
     ordered.forEach(p=>{
       if(used.has(p.id)) return;
       if(p.familyGroupId){
         const members = ordered.filter(x => x.familyGroupId && x.familyGroupId === p.familyGroupId && !used.has(x.id));
         members.forEach(x=>used.add(x.id));
-        if(members.length && members.length <= BATCH_SIZE) units.push(members);
-        else members.forEach(x=>units.push([x]));
+        if(members.length && members.length <= BATCH_SIZE) units.push(members); else members.forEach(x=>units.push([x]));
       } else { used.add(p.id); units.push([p]); }
     });
     const out = []; let current = [];
@@ -349,9 +232,8 @@
     if(current.length) out.push(current);
     return out;
   }
-
   function cardHTML(p){
-    const meta = [p.community, p.age ? (p.age + '') : ''].filter(Boolean).map(x=>'<span>'+esc(x)+'</span>').join('');
+    const meta = [p.community, p.age ? p.age : ''].filter(Boolean).map(x=>'<span>'+esc(x)+'</span>').join('');
     const img = p.photo ? '<img src="'+esc(p.photo)+'" alt="'+esc(p.name)+'" loading="eager" onerror="this.closest(\'.memory-photo\').classList.add(\'no-photo\');this.remove();">' : '';
     return '<button type="button" class="memory-card" data-id="'+esc(p.id)+'">' +
       '<span class="memory-photo '+(p.photo?'':'no-photo')+'">'+img+'</span>' +
@@ -359,14 +241,9 @@
       '<span class="memory-meta">'+meta+'</span>' +
       (p.role ? '<span class="memory-role">'+esc(p.role)+'</span>' : '') + '</span></button>';
   }
-
   function renderBatch(index, animate){
     if(!stage) return;
-    if(!batches.length){
-      stage.innerHTML = '<div class="empty-state">'+esc(allPeople.length ? T.noResults : T.noManifest)+'</div>';
-      if(countLine) countLine.textContent='';
-      return;
-    }
+    if(!batches.length){ stage.innerHTML = '<div class="empty-state">'+T.noResults+'</div>'; countLine.textContent=''; return; }
     batchIndex = (index + batches.length) % batches.length;
     const doRender = () => {
       const batch = batches[batchIndex];
@@ -375,12 +252,10 @@
         card.addEventListener('click',()=>openModal(card.dataset.id));
         setTimeout(()=>card.classList.add('is-visible'), 90 + i*95);
       });
-      if(countLine) countLine.textContent = T.displaying + ' ' + batch.length + ' ' + T.from + ' ' + filteredPeople.length;
+      countLine.textContent = T.displaying + ' ' + batch.length + ' ' + T.from + ' ' + filteredPeople.length;
     };
-    if(animate && stage.children.length){
-      stage.querySelectorAll('.memory-card').forEach(card=>card.classList.remove('is-visible'));
-      setTimeout(doRender, FADE_MS);
-    } else doRender();
+    if(animate && stage.children.length){ stage.querySelectorAll('.memory-card').forEach(card=>card.classList.remove('is-visible')); setTimeout(doRender, FADE_MS); }
+    else doRender();
   }
   function restartTimer(){
     clearInterval(timer);
@@ -390,93 +265,60 @@
   function applyFilter(){
     const q = normalizeForSearch(searchInput ? searchInput.value : '');
     filteredPeople = q ? allPeople.filter(p=>p.search.includes(q)) : allPeople.slice();
-    batches = buildBatches(filteredPeople);
-    batchIndex = 0;
-    renderBatch(0,false);
-    restartTimer();
+    batches = buildBatches(filteredPeople); batchIndex = 0; renderBatch(0,false); restartTimer();
   }
   function setPaused(value){
     paused = value;
     if(pauseBtn){ pauseBtn.setAttribute('aria-pressed', String(paused)); pauseBtn.textContent = paused ? T.play : T.pause; }
     restartTimer();
   }
-  function thumbsHTML(p){
-    const list = (p.photos || []).slice(0, 12);
-    if(list.length <= 1) return '';
-    return list.map((src, idx) => '<button type="button" class="modal-thumb" data-src="'+esc(src)+'" aria-label="תמונה '+(idx+1)+'"><img src="'+esc(src)+'" alt="'+esc(p.name)+'"></button>').join('');
-  }
-  function setModalImage(src, name){
+  function renderModalImage(p, src){
     const fig = $('#modalImage');
     if(!fig) return;
-    fig.innerHTML = src ? '<img src="'+esc(src)+'" alt="'+esc(name)+'">' : '<span class="memory-photo no-photo" aria-hidden="true"></span>';
+    fig.innerHTML = src ? '<img src="'+esc(src)+'" alt="'+esc(p.name)+'">' : '';
   }
-  async function maybeFetchText(p){
-    if(p.story || !p.asset || !p.asset.folder || window.location.protocol === 'file:') return p.story;
-    const base = text(p.asset.baseUrl || 'assets/people').replace(/[\\/]+$/,'');
-    const folder = encodeURIComponent(p.asset.folder);
-    const urls = [
-      base+'/'+folder+'/profile_text.txt',
-      base+'/'+folder+'/all_text_profile_and_inner_pages.txt'
-    ];
-    for(const url of urls){
-      try{
-        const res = await fetch(url, {cache:'force-cache'});
-        if(res.ok){
-          const val = cleanDisplayText(await res.text());
-          if(val){ p.story = val; return val; }
-        }
-      }catch(e){}
-    }
-    return p.story;
-  }
-  async function openModal(id){
+  function openModal(id){
     const p = filteredPeople.find(x=>String(x.id)===String(id)) || allPeople.find(x=>String(x.id)===String(id));
     if(!p || !modal) return;
     lastFocus = document.activeElement;
     $('#modalKicker').textContent = T.page;
     $('#modalName').textContent = p.name + ' ' + T.zl;
     $('#modalMeta').textContent = [p.community, p.age ? p.age : '', p.role].filter(Boolean).join(' | ');
-    const storyEl = $('#modalStory');
-    storyEl.innerHTML = nl2p(p.story);
-    setModalImage(p.photo, p.name);
+    $('#modalStory').textContent = p.story || '';
+    renderModalImage(p, p.photo);
     const thumbs = $('#modalThumbs');
     if(thumbs){
-      thumbs.innerHTML = thumbsHTML(p);
-      thumbs.querySelectorAll('.modal-thumb').forEach(btn => btn.addEventListener('click', () => setModalImage(btn.dataset.src, p.name)));
+      thumbs.innerHTML = (p.photos || []).slice(0,12).map((src,i)=>'<button type="button" data-src="'+esc(src)+'" aria-label="תמונה '+(i+1)+'"><img src="'+esc(src)+'" alt=""></button>').join('');
+      thumbs.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => renderModalImage(p, btn.dataset.src)));
     }
     modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('modal-open');
     if(modalCard) modalCard.focus();
-    const fetched = await maybeFetchText(p);
-    if(fetched && storyEl) storyEl.innerHTML = nl2p(fetched);
   }
   function closeModal(){
     if(!modal) return;
     modal.classList.remove('is-open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('modal-open');
     if(lastFocus && lastFocus.focus) lastFocus.focus();
   }
-
-  async function init(){
-    if(stage) stage.innerHTML = '<div class="empty-state">טוען נתוני הנצחה...</div>';
-    allPeople = readPeople();
-    if(!allPeople.length){
-      try{
-        const ghPeople = await tryLoadFromGithubWhenManifestEmpty();
-        if(ghPeople.length){
-          ASSET_MANIFEST = ghPeople;
-          allPeople = readPeople();
-        }
-      }catch(e){}
+  function showMessage(msg){ if(stage) stage.innerHTML = '<div class="empty-state">'+esc(msg)+'</div>'; if(countLine) countLine.textContent=''; }
+  function initPeople(list){
+    allPeople = list || [];
+    filteredPeople = allPeople.slice(); batches = buildBatches(filteredPeople);
+    if(!allPeople.length) showMessage(T.noPeople); else { renderBatch(0,false); restartTimer(); }
+  }
+  async function boot(){
+    let people = peopleFromManifest();
+    if(!people.length){
+      showMessage(T.loading);
+      try { people = await loadPeopleFromGitHub(); } catch(e) { people = []; }
     }
-    filteredPeople = allPeople.slice();
-    batches = buildBatches(filteredPeople);
-    renderBatch(0,false); restartTimer();
+    initPeople(people);
   }
 
-  init();
   nextBtn && nextBtn.addEventListener('click',()=>{renderBatch(batchIndex+1,true); restartTimer();});
   prevBtn && prevBtn.addEventListener('click',()=>{renderBatch(batchIndex-1,true); restartTimer();});
   pauseBtn && pauseBtn.addEventListener('click',()=>setPaused(!paused));
   searchInput && searchInput.addEventListener('input', applyFilter);
   modal && modal.addEventListener('click', e=>{ if(e.target.matches('[data-close-modal]')) closeModal(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+  boot();
 })();

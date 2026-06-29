@@ -10,12 +10,12 @@ echo.
 set PEOPLE_DIR=
 set PEOPLE_URL=
 
-if exist "assets\people" (
-  set PEOPLE_DIR=assets\people
-  set PEOPLE_URL=assets/people
-) else if exist "assets\people-original" (
+if exist "assets\people-original" (
   set PEOPLE_DIR=assets\people-original
   set PEOPLE_URL=assets/people-original
+) else if exist "assets\people" (
+  set PEOPLE_DIR=assets\people
+  set PEOPLE_URL=assets/people
 ) else if exist "assets\people_original" (
   set PEOPLE_DIR=assets\people_original
   set PEOPLE_URL=assets/people_original
@@ -24,12 +24,13 @@ if exist "assets\people" (
 if "%PEOPLE_DIR%"=="" (
   echo ERROR: לא נמצאה תיקיית אנשים.
   echo.
-  echo אפשרויות תקינות:
-  echo   assets\people
+  echo לפי הצילום שלך התיקייה צריכה להיות:
   echo   assets\people-original
+  echo.
+  echo אפשר גם:
+  echo   assets\people
   echo   assets\people_original
   echo.
-  echo לפי צילום המסך שלך, התיקייה כנראה נקראת assets\people-original.
   pause
   exit /b 1
 )
@@ -51,10 +52,6 @@ if errorlevel 1 (
 )
 
 echo.
-echo Done. Now upload these together to GitHub:
-echo   index.html
-echo   styles.css
-echo   app.js
-echo   people_assets_manifest.js  ^<-- זה הקובץ החשוב שהתעדכן עכשיו
-echo   assets\people או assets\people-original
+echo Done. Upload the updated people_assets_manifest.js to GitHub.
+echo.
 pause
