@@ -1,0 +1,1 @@
+window.PEOPLE_ASSETS_MANIFEST = [];
