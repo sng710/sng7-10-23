@@ -154,6 +154,7 @@ def build_manifest(assets_dir: Path, base_url: str) -> list[dict]:
 
         items.append({
             "folder": person_dir.name,
+            "baseUrl": str(base_url).replace("\\", "/").strip("/"),
             "name": name,
             "names": sorted(set([name, clean_name(person_dir.name)])),
             "community": community,
@@ -167,9 +168,9 @@ def build_manifest(assets_dir: Path, base_url: str) -> list[dict]:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--assets", default="assets/people", help="Path to assets/people folder")
+    ap.add_argument("--assets", default="assets/people", help="Path to people folder, for example assets/people or assets/people-original")
     ap.add_argument("--output", default="people_assets_manifest.js", help="Output JS file")
-    ap.add_argument("--base-url", default="assets/people", help="URL prefix used by the website")
+    ap.add_argument("--base-url", default="assets/people", help="URL prefix used by the website, matching --assets")
     args = ap.parse_args()
 
     assets_dir = Path(args.assets)

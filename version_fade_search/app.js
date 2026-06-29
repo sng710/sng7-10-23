@@ -16,13 +16,100 @@
     displaying: 'מוצגים',
     from: 'מתוך',
     noText: 'לא נמצא טקסט להצגה עבור אדם זה. יש לוודא שקיים profile_text.txt ושהרצת את run_build_manifest_windows.bat.',
-    noManifest: 'לא נטענו אנשים. יש להעתיק את assets/people ואז להריץ run_build_manifest_windows.bat כדי ליצור people_assets_manifest.js.'
+    noManifest: 'לא נטענו אנשים. אם people_assets_manifest.js ריק, צריך להריץ run_build_manifest_windows.bat אחרי שתיקיית האנשים נמצאת בתוך assets/people או assets/people-original, ואז להעלות מחדש את people_assets_manifest.js.'
   };
+
+
+  const GH_TEXT_PRIORITY = ['profile_text.txt','summary.txt','person_summary.txt','all_text_profile_and_inner_pages.txt'];
+  const GH_IMAGE_EXTS = /\.(jpe?g|png|webp|gif|avif)$/i;
+  function githubRawUrl(owner, repo, branch, path){ return 'https://raw.githubusercontent.com/' + encodeURIComponent(owner) + '/' + encodeURIComponent(repo) + '/' + encodeURIComponent(branch) + '/' + path.split('/').map(encodeURIComponent).join('/'); }
+  function getGithubPageContext(){
+    const host = window.location.hostname || '';
+    if(!host.endsWith('.github.io')) return null;
+    const owner = host.replace(/\.github\.io$/,'');
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    if(!owner || !parts.length) return null;
+    const repo = parts[0];
+    let pageDirParts = parts.slice(1);
+    if(pageDirParts.length && /\.[a-z0-9]+$/i.test(pageDirParts[pageDirParts.length-1])) pageDirParts = pageDirParts.slice(0,-1);
+    return {owner, repo, pageDir: pageDirParts.join('/')};
+  }
+  async function fetchGithubTree(owner, repo, branch){
+    const url = 'https://api.github.com/repos/' + encodeURIComponent(owner) + '/' + encodeURIComponent(repo) + '/git/trees/' + encodeURIComponent(branch) + '?recursive=1';
+    const res = await fetch(url, {cache:'no-store'});
+    if(!res.ok) throw new Error('GitHub tree failed ' + res.status);
+    return await res.json();
+  }
+  async function tryLoadFromGithubWhenManifestEmpty(){
+    if(ASSET_MANIFEST.length) return [];
+    const ctx = getGithubPageContext();
+    if(!ctx) return [];
+    const branches = ['main','master'];
+    const candidates = [ctx.pageDir + '/assets/people-original', ctx.pageDir + '/assets/people'].map(x => x.replace(/^\//,'').replace(/\/+/g,'/'));
+    for(const branch of branches){
+      let data;
+      try{ data = await fetchGithubTree(ctx.owner, ctx.repo, branch); }catch(e){ continue; }
+      const tree = Array.isArray(data.tree) ? data.tree : [];
+      for(const prefixRaw of candidates){
+        const prefix = prefixRaw.replace(/\/+$|^\/+/, '');
+        const files = tree.filter(x => x && x.type === 'blob' && typeof x.path === 'string' && x.path.startsWith(prefix + '/'));
+        if(!files.length) continue;
+        const byFolder = new Map();
+        files.forEach(f => {
+          const rest = f.path.slice(prefix.length + 1);
+          const parts = rest.split('/');
+          const folder = parts.shift();
+          if(!folder || parts.length === 0) return;
+          if(!byFolder.has(folder)) byFolder.set(folder, {folder, baseUrl: prefix, textPath:'', photos:[]});
+          const item = byFolder.get(folder);
+          const rel = parts.join('/');
+          const filename = parts[parts.length-1].toLowerCase();
+          if(parts[0] === 'photos' && GH_IMAGE_EXTS.test(filename)) item.photos.push(githubRawUrl(ctx.owner, ctx.repo, branch, f.path));
+          if(parts.length === 1 && GH_TEXT_PRIORITY.includes(filename)){
+            const existingRank = item.textPath ? GH_TEXT_PRIORITY.indexOf(item.textName) : 999;
+            const rank = GH_TEXT_PRIORITY.indexOf(filename);
+            if(rank >= 0 && rank < existingRank){ item.textPath = f.path; item.textName = filename; }
+          }
+        });
+        const people = [];
+        for(const item of byFolder.values()){
+          let profileText = '';
+          if(item.textPath){
+            try{
+              const tr = await fetch(githubRawUrl(ctx.owner, ctx.repo, branch, item.textPath), {cache:'force-cache'});
+              if(tr.ok) profileText = cleanDisplayText(await tr.text());
+            }catch(e){}
+          }
+          const name = inferNameFromText(profileText) || assetNameFromFolder(item.folder);
+          people.push({
+            folder: item.folder,
+            baseUrl: item.baseUrl,
+            name,
+            names: unique([name, assetNameFromFolder(item.folder)]),
+            community: inferResidenceFromText(profileText),
+            age: inferAgeFromText(profileText),
+            textFile: item.textName || '',
+            profileText,
+            photos: unique(item.photos)
+          });
+        }
+        if(people.length) return people;
+      }
+    }
+    return [];
+  }
+  function inferNameFromText(profileText){
+    const lines = cleanDisplayText(profileText).split('\n').slice(0,25);
+    for(const line of lines){
+      if(/ז[״"'׳`]{0,2}\s*ל/.test(line) && line.length <= 90) return cleanName(line);
+    }
+    return '';
+  }
 
   const BATCH_SIZE = 6;
   const ROTATE_MS = 7600;
   const FADE_MS = 650;
-  const ASSET_MANIFEST = Array.isArray(window.PEOPLE_ASSETS_MANIFEST) ? window.PEOPLE_ASSETS_MANIFEST : [];
+  let ASSET_MANIFEST = Array.isArray(window.PEOPLE_ASSETS_MANIFEST) ? window.PEOPLE_ASSETS_MANIFEST : [];
 
   const preferredFirst = [
     'אופיר ליבשטיין',
@@ -164,12 +251,12 @@
     if(!ASSET_MANIFEST.length) return null;
     const explicitFolder = text(raw.assetsFolder || raw.assetFolder || raw.peopleFolder || raw.folder || raw.directory || raw.personFolder);
     if(explicitFolder){
-      const f = explicitFolder.replace(/^assets\/people\//,'').replace(/[\\/]+$/,'');
+      const f = explicitFolder.replace(/^assets\/(?:people|people-original)\//,'').replace(/[\\/]+$/,'');
       const exact = ASSET_MANIFEST.find(a => text(a.folder) === f || text(a.folder).endsWith('/'+f));
       if(exact) return exact;
     }
-    if(photo && photo.includes('assets/people/')){
-      const m = photo.match(/assets\/people\/([^/]+)/);
+    if(photo && (photo.includes('assets/people/') || photo.includes('assets/people-original/'))){
+      const m = photo.match(/assets\/(?:people|people-original)\/([^/]+)/);
       if(m){
         const rawFolder = decodeURIComponent(m[1]);
         const exact = ASSET_MANIFEST.find(a => text(a.folder) === rawFolder || encodeURIComponent(text(a.folder)) === m[1]);
@@ -325,10 +412,11 @@
   }
   async function maybeFetchText(p){
     if(p.story || !p.asset || !p.asset.folder || window.location.protocol === 'file:') return p.story;
+    const base = text(p.asset.baseUrl || 'assets/people').replace(/[\\/]+$/,'');
     const folder = encodeURIComponent(p.asset.folder);
     const urls = [
-      'assets/people/'+folder+'/profile_text.txt',
-      'assets/people/'+folder+'/all_text_profile_and_inner_pages.txt'
+      base+'/'+folder+'/profile_text.txt',
+      base+'/'+folder+'/all_text_profile_and_inner_pages.txt'
     ];
     for(const url of urls){
       try{
@@ -367,10 +455,24 @@
     if(lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
-  allPeople = readPeople();
-  filteredPeople = allPeople.slice();
-  batches = buildBatches(filteredPeople);
-  renderBatch(0,false); restartTimer();
+  async function init(){
+    if(stage) stage.innerHTML = '<div class="empty-state">טוען נתוני הנצחה...</div>';
+    allPeople = readPeople();
+    if(!allPeople.length){
+      try{
+        const ghPeople = await tryLoadFromGithubWhenManifestEmpty();
+        if(ghPeople.length){
+          ASSET_MANIFEST = ghPeople;
+          allPeople = readPeople();
+        }
+      }catch(e){}
+    }
+    filteredPeople = allPeople.slice();
+    batches = buildBatches(filteredPeople);
+    renderBatch(0,false); restartTimer();
+  }
+
+  init();
   nextBtn && nextBtn.addEventListener('click',()=>{renderBatch(batchIndex+1,true); restartTimer();});
   prevBtn && prevBtn.addEventListener('click',()=>{renderBatch(batchIndex-1,true); restartTimer();});
   pauseBtn && pauseBtn.addEventListener('click',()=>setPaused(!paused));

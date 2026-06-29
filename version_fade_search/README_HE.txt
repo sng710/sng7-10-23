@@ -1,14 +1,18 @@
-גרסת faded leaf עם טעינה מתוך assets/people - v3
-=================================================
+גרסת faded leaf עם טעינה מתוך assets/people או assets/people-original - v4
+=====================================================================
 
 מה תוקן בגרסה הזו:
-1. אין יותר טעינה של data.js, ולכן לא אמורה להיות שגיאת 404 על data.js.
-2. העיצוב חזר להיות כמעט זהה לגרסת faded leaf המקורית.
-3. האנשים, התמונות והטקסטים נטענים מתוך people_assets_manifest.js.
-4. people_assets_manifest.js נוצר מתוך assets/people בעזרת run_build_manifest_windows.bat.
-5. התיקון החשוב: הנתיבים לתמונות בעברית תוקנו. בגרסה הקודמת base-url קודד בטעות כ-assets%2Fpeople.
+1. אין צורך ב-data.js.
+2. נשמר עיצוב faded leaf.
+3. הפופ-אפ משתמש רק ב-profile_text.txt ובתמונות שבתוך photos.
+4. run_build_manifest_windows.bat מזהה עכשיו אוטומטית גם:
+   assets\people
+   assets\people-original
+   assets\people_original
+5. לפי צילום המסך שלך, אצלך התיקייה היא assets\people-original, ולכן v3 יצר/השאיר manifest ריק.
+6. הנתיבים לתמונות ול-profile_text.txt נבנים עכשיו לפי שם התיקייה האמיתי.
 
-מבנה תיקיות נדרש:
+מבנה תקין לפי המצב שלך:
 
 index.html
 styles.css
@@ -17,7 +21,7 @@ people_assets_manifest.js
 run_build_manifest_windows.bat
 tools/
 assets/
-  people/
+  people-original/
     43540_קשת_זוהר_ז"ל/
       photos/
         image1.jpg
@@ -25,24 +29,33 @@ assets/
       profile_text.txt
 
 איך משתמשים:
-1. העתיקי את תיקיית people שלך אל:
-   assets/people
+1. במחשב שלך, בתוך תיקיית version_fade_search המקומית, ודאי שיש:
+   assets\people-original
 
 2. לחצי פעמיים על:
    run_build_manifest_windows.bat
 
-3. אחרי שזה מסתיים, ייווצר/יתעדכן:
-   people_assets_manifest.js
+3. אחרי ההרצה, פתחי את people_assets_manifest.js ובדקי שהוא לא ריק.
+   לא טוב:
+   window.PEOPLE_ASSETS_MANIFEST = [];
 
-4. העלי לאתר יחד:
+   טוב:
+   window.PEOPLE_ASSETS_MANIFEST = [ ...הרבה אנשים... ];
+
+4. העלי מחדש ל-GitHub את:
    index.html
    styles.css
    app.js
    people_assets_manifest.js
-   assets/people
+   assets/people-original
 
-חשוב:
-- אין צורך ב-data.js לגרסה הזו.
-- אם את מחליפה/מוסיפה תיקיות אנשים או תמונות, צריך להריץ שוב את run_build_manifest_windows.bat.
-- הפופ-אפ משתמש רק ב-profile_text.txt ובתמונות שבתוך photos.
-- הוא לא משתמש ב-inner_pages, profile.json או gallery_manifest.json.
+חשוב מאוד:
+GitHub לא מריץ את קובץ ה-BAT בעצמו. צריך להריץ אותו אצלך במחשב ואז להעלות את people_assets_manifest.js המעודכן.
+
+Fallback אוטומטי מ-GitHub:
+אם שכחת להעלות manifest מלא והאתר רץ ב-GitHub Pages, app.js ינסה לקרוא את רשימת הקבצים דרך GitHub API מתוך:
+version_fade_search/assets/people-original
+ואם לא נמצא, מתוך:
+version_fade_search/assets/people
+
+עדיין מומלץ יותר להריץ את ה-BAT ולהעלות manifest מלא, כי זה מהיר ויציב יותר.
