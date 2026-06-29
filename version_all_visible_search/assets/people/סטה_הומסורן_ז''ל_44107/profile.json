@@ -1,0 +1,183 @@
+{
+  "id": "44107",
+  "name": "סטה הומסורן ז''ל",
+  "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/Page/Default.aspx?ID=44107",
+  "age_text": "בן 36 במותו",
+  "death_date_text": "7/10/2023",
+  "residence": "תאילנד",
+  "event_place": "כפר עזה",
+  "burial_place": "",
+  "parents": "",
+  "survived_by": "",
+  "memorial": "סטה מונצח באנדרטה בהר הרצל בלוח מס' 86",
+  "matched_terms": [
+    "כפר עזה"
+  ],
+  "matched_variants": [
+    "כפר עזה"
+  ],
+  "matched_contexts": [
+    "event_place_field",
+    "event_line"
+  ],
+  "matched_evidence": [
+    "event_place_field: כפר עזה",
+    "event_line: מקום אירוע: כפר עזה"
+  ],
+  "discovery_sources": [
+    "listing:https://laad.btl.gov.il/Web/He/HaravotBarzelWar/Default.aspx:page:8"
+  ],
+  "image_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\photos\\photo_001.jpg",
+  "image_url": "https://laad.btl.gov.il/Rsrc/Images/nopicTerror.jpg",
+  "photo_count": 4,
+  "photos_folder": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\photos",
+  "photos": [
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\photos\\photo_001.jpg",
+      "url": "https://laad.btl.gov.il/Rsrc/Images/nopicTerror.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/Page/Default.aspx?ID=44107",
+      "content_type": "image/jpeg",
+      "bytes": 38053
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\photos\\photo_002.jpg",
+      "url": "https://laad.btl.gov.il/Items/00335/003.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/Page/Default.aspx?ID=44107",
+      "content_type": "image/jpeg",
+      "bytes": 84524
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\photos\\photo_003.jpg",
+      "url": "https://laad.btl.gov.il/Items/00334/002.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107",
+      "content_type": "image/jpeg",
+      "bytes": 112333
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\photos\\photo_004.jpg",
+      "url": "https://laad.btl.gov.il/Items/00333/001.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1",
+      "content_type": "image/jpeg",
+      "bytes": 152123
+    }
+  ],
+  "inner_page_count": 12,
+  "inner_pages": [
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_01.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 1,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_02.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 1,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_03.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_04.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_05.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_06.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_07.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_08.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_09.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_10.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_11.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | סטה הומסורן ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\inner_pages\\gallery_12.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    }
+  ],
+  "gallery_urls": [
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=44107&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1"
+  ],
+  "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\profile_text.txt",
+  "all_text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\all_text_profile_and_inner_pages.txt",
+  "gallery_manifest_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107\\gallery_manifest.json",
+  "folder": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\סטה_הומסורן_ז''ל_44107",
+  "full_text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nשיתוף בפייסבוק הדפסת תווית לנר זיכרון בן 36 במותו\nהתגורר בתאילנד\nחלל פעולת איבה\nב- 7/10/2023\nמקום אירוע: כפר עזה\nסטה מונצח באנדרטה בהר הרצל בלוח מס' 86\nקורות חיים\nבשבת כ\"ב בתשרי, שמחת תורה תשפ\"ד, 7 באוקטובר 2023, פתח בשעה שש וחצי בבוקר ארגון הטרור חמאס בירי טילים ורקטות מרצועת עזה לדרום ולמרכז ישראל. בשעות הבאות חדרו אלפי מחבלים את גדר הגבול מרצועת עזה למדינת ישראל והחלה מתקפה רצחנית על יישובי עוטף עזה - קיבוצים ומושבים, על הערים הסמוכות שדרות, אופקים ונתיבות, על מבלי מסיבות טבע סמוך לקיבוצים רעים ונירים, על בסיסי צה\"ל ועל העוברים בדרכים באזור. המחבלים רצחו כ-800 אזרחים בני כל הגילים בבתיהם, במכוניותיהם ובעת שבילו במסיבות, חטפו לרצועת עזה מאות ישראלים ועובדים זרים מהקיבוצים, החריבו בתים רבים ביישובים ולמעלה מ-350 חיילים ושוטרים נפלו בטרם הצליחו כיתות הכוננות המקומיות וכוחות צה\"ל להשתלט על השטח.\nבבוקר זה החלה מלחמה.\nאנו עושים כל מאמץ לדייק במידע המופיע, ומתנצלים אם אירעה טעות.\nאם ברצונכם להעיר או לתקן פרטים בדף זה, אנא צרו קשר.\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nסטה הומסורן ז''ל\nעל אודות האתר\nבניית אתרים:\nפיתוח מאגרי מידע",
+  "error": ""
+}

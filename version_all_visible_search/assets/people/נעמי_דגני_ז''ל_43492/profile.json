@@ -1,0 +1,272 @@
+{
+  "id": "43492",
+  "name": "נעמי דגני ז''ל",
+  "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/Page/Default.aspx?ID=43492",
+  "age_text": "בת 80 במותה",
+  "death_date_text": "כ\"ב בתשרי תשפ\"ד, 7/10/2023",
+  "residence": "כפר עזה",
+  "event_place": "כפר עזה",
+  "burial_place": "קיבוץ כפר עזה",
+  "parents": "בת חיה ומשה",
+  "survived_by": "ה: ארבעה ילדים, נכדים ואחים",
+  "memorial": "נעמי מונצחת באנדרטה בהר הרצל בלוח מס' 85",
+  "matched_terms": [
+    "כפר עזה"
+  ],
+  "matched_variants": [
+    "כפר עזה"
+  ],
+  "matched_contexts": [
+    "residence_field",
+    "event_place_field",
+    "residence_line",
+    "event_line"
+  ],
+  "matched_evidence": [
+    "residence_field: כפר עזה",
+    "event_place_field: כפר עזה",
+    "residence_line: התגוררה בכפר עזה",
+    "event_line: מקום אירוע: כפר עזה",
+    "event_line: נרצחה במהלך אירועים אלה. בת 80 בהירצחה. היא הובאה למנוחות בבית העלמין בקיבוץ שפיים, וכשהתאפשר הועברה למנוחת עולמים בבית העלמין בכפר עזה."
+  ],
+  "discovery_sources": [
+    "listing:https://laad.btl.gov.il/Web/He/HaravotBarzelWar/Default.aspx:page:7"
+  ],
+  "image_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_001.jpg",
+  "image_url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_11.jpg",
+  "photo_count": 16,
+  "photos_folder": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos",
+  "photos": [
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_001.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_11.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/Page/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 92924
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_002.jpg",
+      "url": "https://laad.btl.gov.il/Items/00335/003.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/Page/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 84524
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_003.jpg",
+      "url": "https://laad.btl.gov.il/view_files/HeapItem_pic/070120/HP_070120_10.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120",
+      "content_type": "image/jpeg",
+      "bytes": 24940
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_004.jpg",
+      "url": "https://laad.btl.gov.il/view_files/HeapItem_pic/070120/HP_070120_11.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120",
+      "content_type": "image/jpeg",
+      "bytes": 26132
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_005.jpg",
+      "url": "https://laad.btl.gov.il/Items/00333/001.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120",
+      "content_type": "image/jpeg",
+      "bytes": 152123
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_006.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_10.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 85312
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_007.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_12.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 318155
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_008.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_13.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 207421
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_009.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_14.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 160691
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_010.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_15.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 199771
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_011.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_16.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 140747
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_012.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_17.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 204465
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_013.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_18.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 263530
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_014.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_19.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 378616
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_015.jpg",
+      "url": "https://laad.btl.gov.il/view_files/Nofel_Pic/043492/NP_043492_20.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "content_type": "image/jpeg",
+      "bytes": 351177
+    },
+    {
+      "file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\photos\\photo_016.jpg",
+      "url": "https://laad.btl.gov.il/Items/00334/002.jpg",
+      "source_page": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1",
+      "content_type": "image/jpeg",
+      "bytes": 112333
+    }
+  ],
+  "inner_page_count": 12,
+  "inner_pages": [
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_01.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 3,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_02.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 10,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_03.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 1,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&fbrefresh=1",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_04.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_05.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_06.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_07.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_08.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_09.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_10.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_11.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    },
+    {
+      "url": "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+      "title": "גלרייה תמונות | נעמי דגני ז''ל",
+      "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\inner_pages\\gallery_12.txt",
+      "text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+      "photo_count": 0,
+      "error": ""
+    }
+  ],
+  "gallery_urls": [
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&connect=70120&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1",
+    "https://laad.btl.gov.il/Web/He/TerrorVictims/GalleryNofel/Default.aspx?ID=43492&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1&fbrefresh=1"
+  ],
+  "text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\profile_text.txt",
+  "all_text_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\all_text_profile_and_inner_pages.txt",
+  "gallery_manifest_file": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492\\gallery_manifest.json",
+  "folder": "C:\\Users\\mobts25\\Downloads\\btl_laad_people_collector_dashboard_v5\\output\\people\\נעמי_דגני_ז''ל_43492",
+  "full_text": "עבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nשיתוף בפייסבוק הדפסת תווית לנר זיכרון בת 80 במותה\nבת חיה ומשה\nנולדה בכ\"א בתמוז תש\"ג, 24/7/1943\nהתגוררה בכפר עזה\nחללת פעולת איבה\nבכ\"ב בתשרי תשפ\"ד, 7/10/2023\nמקום אירוע: כפר עזה\nהובאה למנוחת עולמים בקיבוץ כפר עזה\nאזור: בית העלמין המקומי\nהותירה: ארבעה ילדים, נכדים ואחים\nנעמי מונצחת באנדרטה בהר הרצל בלוח מס' 85\nקורות חיים\nנעמי נולדה בכ\"א בתמוז תש\"ג (24.07.1943) בקיבוץ כפר בלום בעמק החולה בגליל העליון. בתם הבכורה של משה וחיה ניר, שהיו ממקימי הקיבוץ ומראשוני המתיישבים בעמק החולה. אחות לחנה, אהרון ותמי.\nגדלה והתחנכה בקיבוץ כפר בלום.\nבגיל 18 הגיעה במסגרת שנת השירות לכפר עזה, שהיה קיבוץ ספר צעיר בן חמש שנים, עם 40 חברים וחברות. במסגרת שירותה הצבאי, עקב מחסור לאומי באחיות, הוכשרה כאחות בבית ספר לאחיות בתל השומר ומיד לאחר מכן שבה לקיבוץ כפר עזה כדי לסייע בהקמת המרפאה ולשמש שם כאחות.\nבשנת 1966 היא נישאה לישראל אלתרמן, מגרעין המייסדים של הקיבוץ, ובהמשך נולדו להם ארבעה ילדים - ענת, יוני, דרור ולילך.\nבשנת 1975 יצאה המשפחה לשליחות בת 3 שנים בהאיטי שבאיים הקריבים. ביציאה לשליחות המשפחה נדרשה להחליף את שם המשפחה לשם 'יותר ישראלי', וכך שונה שם המשפחה לדגני.\nכל חייה עבדה נעמי כאחות - שנים רבות במרפאה בקיבוץ כפר עזה ובהמשך, למעלה מעשרים שנה ועד פרישתה לגמלאות, התמסרה לעבודתה כאחות במחלקת הפגים בבית החולים סורוקה בבאר שבע. עם יציאתה לפנסיה היא המשיכה לעבוד כאחות - הפעם בהתנדבות במרפאת הקיבוץ.\nהמשפחה ובעיקר תשעת נכדיה היו עולם ומלואו עבור סבתא נעמי הגאה. בשבילה הם כולם היו המקסימים והמושלמים ביותר בעולם כולו.\nנעמי הקפידה על אורח חיים פעיל ובריא ועסקה במגוון פעילויות ספורט, ולא ויתרה גם כשעם הגיל זה נעשה יותר ויותר מאתגר. לצד זה היא הרחיבה את תחומי העניין שלה בשנים האחרונות גם לתחום האומנות, התנדבה לסייע בסדנת האומנות שבקיבוץ והשתתפה בקביעות בחוג יצירת מנדלות, שהפך לתחביב מרכזי.\nישראל, בעלה של נעמי, נפטר פחות משנה לפני הירצחה. היה זה לאחר חמש וחצי שנים בהן טיפלה וסעדה אותו במסירות.\nבשבת של שמחת תורה תשפ\"ד, 7 באוקטובר 2023, בשעה 6:30 פתח ארגון הטרור חמאס בירי טילים ורקטות מרצועת עזה לישראל כשבמקביל פשטו אלפי מחבלים למדינת ישראל והחלו במסע הרג והרס בכפר עזה ובשאר יישובי עוטף עזה, כשבשטח אין מספיק כוחות צבא כדי להגן על הישובים. התושבים נפלו קורבן למסע הרג רצחני ואכזרי, ולחטיפה של אזרחים, כולל אימהות, קשישים וילדים.\nנעמי, ששהתה בזמן המתקפה לבד בביתה, נרצחה במהלך אירועים אלה. בת 80 בהירצחה. היא הובאה למנוחות בבית העלמין בקיבוץ שפיים, וכשהתאפשר הועברה למנוחת עולמים בבית העלמין בכפר עזה.\nכתבו בני המשפחה: \"הירצחה של נעמי הותיר במשפחתה חלל עצום והנחמה היחידה היא שבבוקר אותה שבת ארורה, בשעותיה האחרונות, כשבחוץ כבר נשמעו קולות ירי וצעקות בערבית, היא הספיקה לשוחח בטלפון עם חלק מילדיה ונכדיה, וכהרגלה צחקה והתבדחה איתם.\nנעמי הייתה אישה אוהבת, עם שמחת חיים, חייכנית אופטימית, טובת לב, רגישה ורגשנית, שחיה את חייה בפשטות, בנתינה, בחמלה גדולה ואמפתיה כלפי אחרים. יהי זכרה ברוך\".\nאנו עושים כל מאמץ לדייק במידע המופיע, ומתנצלים אם אירעה טעות.\nאם ברצונכם להעיר או לתקן פרטים בדף זה, אנא צרו קשר.\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nתמונות המצבה\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע\n\nעבור לתפריט נושאים\nעבור למפת האתר\nאזרחים חללי פעולות איבה - חיפוש\nחללי \"חרבות ברזל\"\nהאנדרטה לזכרם בהר הרצל\nדבר שר העבודה\nדבר מנכ\"ל הביטוח הלאומי\nמידע שימושי למשפחות השכולות\nאוגדן זכויות למשפחות חללי פעולות האיבה\nנעמי דגני ז''ל\nאלבום זיכרון\nעל אודות האתר\nדף חלל\nאלבום זיכרון\nתמונות המצבה\nבניית אתרים:\nפיתוח מאגרי מידע",
+  "error": ""
+}
